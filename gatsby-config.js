@@ -1,10 +1,30 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-  plugins: [],
-}
+	plugins: [
+		'gatsby-plugin-styled-components',
+		'gatsby-plugin-image',
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
+
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `images`,
+				path: `${__dirname}/src/images/`,
+			},
+		},
+
+		{
+			resolve: `gatsby-plugin-google-fonts`,
+			options: {
+				fonts: [`Poppins\:700`, `Roboto\:300, 400, 500, 700`],
+				display: 'swap',
+			},
+		},
+	],
+	siteMetadata: {
+		title: 'Mushfiq Rahman | Web Development',
+		description: 'Portfolio website of Mushfiq Rahman',
+		author: 'Mushfiq Rahman',
+		contact: 'mushfiqurrahman78@yahoo.com',
+	},
+};
