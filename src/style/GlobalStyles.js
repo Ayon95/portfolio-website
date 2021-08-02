@@ -26,6 +26,7 @@ const GlobalStyles = createGlobalStyle`
     h1, h2, h3 {
         font-family: 'Poppins', sans-serif;
         color: ${stylesConfig.headingFontColor};
+        line-height: 1.3;
     }
 
     p {
