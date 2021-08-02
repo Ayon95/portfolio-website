@@ -1,20 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import Layout from '../components/layout/Layout';
+import Navbar from '../components/navigation/Navbar';
 import Hero from '../components/sections/Hero';
 import GlobalStyles from '../style/GlobalStyles';
 
 export default function Home() {
 	return (
-		<AppContainer>
+		<div id="app">
 			<GlobalStyles />
-			<Hero />
-		</AppContainer>
+			<Layout>
+				<Hero />
+			</Layout>
+		</div>
 	);
 }
-
-const AppContainer = styled.div`
-	width: 100%;
-	max-width: 110rem;
-	margin: 0 auto;
-	padding: 0 2rem;
-`;

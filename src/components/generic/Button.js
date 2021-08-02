@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import stylesConfig from '../../style/stylesConfig';
 
 function Button({ text, isLink }) {
 	if (isLink) {
@@ -16,7 +17,7 @@ const commonButtonStyles = css`
 	display: inline-block;
 	padding: 1.5rem 2.5rem;
 	border-radius: 10rem;
-	background-color: #3e2c99;
+	background-color: ${stylesConfig.colorPrimary};
 	font-family: 'Nunito Sans';
 	color: #eee;
 	letter-spacing: 1.2px;

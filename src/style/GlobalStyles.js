@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 2rem;
         font-family: 'Nunito Sans', sans-serif;
         background-color: black;
-        background-image: linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36));
+        background-image: ${stylesConfig.backgroundGradient};
     }
 
     h1, h2, h3 {
