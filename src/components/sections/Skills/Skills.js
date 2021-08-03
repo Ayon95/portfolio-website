@@ -8,21 +8,21 @@ import {
 	SiGatsby,
 	SiMongodb,
 } from 'react-icons/si';
-import { DiResponsive } from 'react-icons/di';
+import { MdDevices } from 'react-icons/md';
 import Skill from './Skill';
-import stylesConfig from '../../../style/stylesConfig';
+import SectionWrapper from '../../generic/SectionWrapper';
 
 const skills = [
-	{ text: 'HTML5', icon: FaHtml5, color: '#ed5205' },
-	{ text: 'CSS3', icon: FaCss3Alt, color: '#2563f5' },
+	{ text: 'HTML5', icon: FaHtml5, color: '#f05a1a' },
+	{ text: 'CSS3', icon: FaCss3Alt, color: '#2965f1' },
 	{ text: 'Sass', icon: FaSass, color: '#c752a6' },
-	{ text: 'Responsive Design', icon: DiResponsive, color: '#eee' },
+	{ text: 'Responsive Design', icon: MdDevices, color: '#4ddbb3' },
 	{ text: 'JavaScript', icon: SiJavascript, color: '#e3e017' },
 	{ text: 'TypeScript', icon: SiTypescript, color: '#2a74d4' },
 	{ text: 'React', icon: FaReact, color: '#61dafb' },
 	{ text: 'styled components', icon: SiStyledComponents, color: '#c74eab' },
 	{ text: 'Gatsby', icon: SiGatsby, color: '#663399' },
-	{ text: 'Node.js', icon: FaNodeJs, color: '#36a81d' },
+	{ text: 'Node.js', icon: FaNodeJs, color: '#3e863d' },
 	{ text: 'MongoDB', icon: SiMongodb, color: '#13aa52' },
 	{ text: 'Git', icon: FaGitAlt, color: '#f14e32' },
 	{ text: 'npm', icon: FaNpm, color: '#cb3837' },
@@ -30,26 +30,18 @@ const skills = [
 
 function Skills() {
 	return (
-		<Container>
-			<h2>Skills</h2>
+		<SectionWrapper title="Skills">
 			<SkillsList>
 				{skills.map(({ text, icon, color }) => (
 					<Skill text={text} icon={icon} color={color} />
 				))}
 			</SkillsList>
-		</Container>
+		</SectionWrapper>
 	);
 }
 
 export default Skills;
 
-const Container = styled.section`
-	h2 {
-		font-size: 3.4rem;
-		text-align: center;
-		margin-bottom: 6rem;
-	}
-`;
 const SkillsList = styled.ul`
 	list-style: none;
 	display: grid;

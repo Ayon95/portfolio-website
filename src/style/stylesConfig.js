@@ -8,7 +8,7 @@ const stylesConfig = {
 	colorPrimary: '#3e2c99',
 
 	// spacing
-	sectionVerticalPadding: '10rem',
+	sectionVerticalPadding: '8rem',
 
 	// background gradient for the app
 	backgroundGradient: 'linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36))',
