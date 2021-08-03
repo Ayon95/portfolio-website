@@ -45,7 +45,7 @@ export default Hero;
 const Container = styled.section`
 	/* subtracting the height of the nav bar */
 	height: calc(100vh - 8.8rem);
-	padding: ${stylesConfig.sectionVerticalPadding} 0;
+	border-bottom: 2px solid ${stylesConfig.colorPrimary};
 	display: flex;
 	align-items: center;
 `;

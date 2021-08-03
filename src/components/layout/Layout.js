@@ -14,9 +14,8 @@ function Layout({ children }) {
 export default Layout;
 
 const Content = styled.div`
-	border: 1px solid red;
 	width: 100%;
 	max-width: 110rem;
 	margin: 0 auto;
-	padding: 0 2rem;
+	padding: 0 3rem;
 `;

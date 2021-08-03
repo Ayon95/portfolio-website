@@ -47,7 +47,6 @@ const Nav = styled(motion.nav)`
 	justify-content: flex-end;
 	z-index: 10;
 	background-color: transparent;
-	border: 1px solid yellow;
 `;
 
 const NavLinksContainer = styled(motion.div)`
