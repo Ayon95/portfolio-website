@@ -29,7 +29,8 @@ function Hero() {
 export default Hero;
 
 const Container = styled.section`
-	height: 100vh;
+	/* subtracting the height of the nav bar */
+	height: calc(100vh - 8.8rem);
 	padding: ${stylesConfig.sectionVerticalPadding} 0;
 	display: flex;
 	align-items: center;
@@ -37,13 +38,11 @@ const Container = styled.section`
 
 const HeroContent = styled.div`
 	h1 {
-		font-size: 4.8rem;
 		margin-bottom: 2rem;
 	}
 
 	p {
 		max-width: 35ch;
-		font-size: 2.4rem;
 		margin-bottom: 4rem;
 	}
 `;

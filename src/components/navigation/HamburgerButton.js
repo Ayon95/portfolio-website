@@ -3,8 +3,6 @@ import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 import { motion } from 'framer-motion';
 import {
-	animateFullBarOpen,
-	animateHalfBarOpen,
 	fullBarVariants,
 	halfBarContainerVariants,
 	halfBarVariants,
@@ -12,17 +10,13 @@ import {
 
 const fullBarWidth = 5.5;
 
-function HamburgerButton() {
-	const [shouldShowMenu, setShouldShowMenu] = useState(false);
-
-	function toggleMenu() {
-		setShouldShowMenu(state => !state);
-	}
+function HamburgerButton({ shouldShowMenu, toggleMenu }) {
 	return (
 		<HamburgerButtonContainer onClick={toggleMenu}>
 			<FullBar
+				custom={{ rotate: 45, y: 15 }}
 				variants={fullBarVariants}
-				animate={shouldShowMenu ? animateFullBarOpen(45, 15) : 'menuClosed'}
+				animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 			/>
 			<HalfBarContainer
 				variants={halfBarContainerVariants}
@@ -30,18 +24,21 @@ function HamburgerButton() {
 			>
 				<HalfBar
 					style={{ borderRadius: '1rem 0 0 1rem' }}
+					custom={-15}
 					variants={halfBarVariants}
-					animate={shouldShowMenu ? animateHalfBarOpen(-15) : 'menuClosed'}
+					animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 				/>
 				<HalfBar
 					style={{ borderRadius: '0 1rem 1rem 0' }}
+					custom={15}
 					variants={halfBarVariants}
-					animate={shouldShowMenu ? animateHalfBarOpen(15) : 'menuClosed'}
+					animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 				/>
 			</HalfBarContainer>
 			<FullBar
+				custom={{ rotate: -45, y: -20 }}
 				variants={fullBarVariants}
-				animate={shouldShowMenu ? animateFullBarOpen(-45, -20) : 'menuClosed'}
+				animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 			/>
 		</HamburgerButtonContainer>
 	);
@@ -58,6 +55,7 @@ const barCommonStyles = css`
 const HamburgerButtonContainer = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
+	z-index: 20;
 `;
 
 const FullBar = styled(motion.span)`

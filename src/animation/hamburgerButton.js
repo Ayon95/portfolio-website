@@ -12,6 +12,17 @@ const halfBarAnimationDuration = 0.3;
 const fullBarAnimationDuration = 0.3;
 
 export const fullBarVariants = {
+	// this is a dynamic variant; it's a function that accepts an argument and returns an animation target object
+	// you can pass the argument via a motion component's 'custom' prop
+	menuOpen: values => ({
+		rotate: values.rotate,
+		y: values.y,
+		transition: {
+			delay: halfBarAnimationDuration,
+			duration: fullBarAnimationDuration,
+		},
+	}),
+
 	menuClosed: {
 		rotate: 0,
 		y: 0,
@@ -34,6 +45,11 @@ export const halfBarContainerVariants = {
 };
 
 export const halfBarVariants = {
+	menuOpen: x => ({
+		x,
+		transition: { duration: halfBarAnimationDuration },
+	}),
+
 	menuClosed: {
 		x: 0,
 		transition: {
@@ -42,23 +58,3 @@ export const halfBarVariants = {
 		},
 	},
 };
-
-// this function will return the animation target object for full bar when the menu should be opened
-export function animateFullBarOpen(rotate, y) {
-	return {
-		rotate,
-		y,
-		transition: {
-			delay: halfBarAnimationDuration,
-			duration: fullBarAnimationDuration,
-		},
-	};
-}
-
-// this function will return the animation target object for half bar when the menu should be opened
-export function animateHalfBarOpen(x) {
-	return {
-		x,
-		transition: { duration: halfBarAnimationDuration },
-	};
-}

@@ -29,10 +29,22 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1.3;
     }
 
+    h1 {
+        font-size: 4rem;
+    }
+
     p {
+        font-size: 2.2rem;
         line-height: 1.5;
-        letter-spacing: 0.2px;
+        letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
         color: ${stylesConfig.bodyFontColor};
+    }
+
+    a {
+        text-decoration: none;
+        color: ${stylesConfig.bodyFontColor};
+        font-size: 3rem;
+        letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
     }
 `;
 

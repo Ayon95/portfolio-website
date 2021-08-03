@@ -1,7 +1,8 @@
 const stylesConfig = {
-	// font colors
+	// typography
 	bodyFontColor: '#c0bfc7',
 	headingFontColor: '#eee',
+	bodyTextLetterSpacing: '0.3px',
 
 	// primary color
 	colorPrimary: '#3e2c99',
