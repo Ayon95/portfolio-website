@@ -3,6 +3,18 @@ import styled from 'styled-components';
 import TypewriterComponent from 'typewriter-effect';
 import stylesConfig from '../../style/stylesConfig';
 import Button from '../generic/Button';
+import FadeInFromBelow from '../animation/FadeInFromBelow';
+import { motion } from 'framer-motion';
+
+const subtitleVariants = {
+	hidden: { x: -60, opacity: 0 },
+
+	visible: {
+		x: 0,
+		opacity: 1,
+		transition: { delay: 0.5, duration: 1, ease: 'easeOut' },
+	},
+};
 
 function Hero() {
 	return (
@@ -17,10 +29,12 @@ function Hero() {
 						}}
 					/>
 				</h1>
-				<p>
+				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">
 					A web developer with a passion for creating wonderful interactive experiences on the web.{' '}
-				</p>
-				<Button text="View Projects" isLink={true} />
+				</motion.p>
+				<FadeInFromBelow>
+					<Button text="View Projects" isLink={true} path="/#projects" />
+				</FadeInFromBelow>
 			</HeroContent>
 		</Container>
 	);

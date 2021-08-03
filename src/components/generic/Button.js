@@ -3,9 +3,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 
-function Button({ text, isLink }) {
+function Button({ text, isLink, path }) {
 	if (isLink) {
-		return <ButtonLinkComponent>{text}</ButtonLinkComponent>;
+		return <ButtonLinkComponent to={path}>{text}</ButtonLinkComponent>;
 	}
 
 	return <ButtonComponent>{text}</ButtonComponent>;
@@ -28,6 +28,7 @@ const commonButtonStyles = css`
 
 const ButtonComponent = styled.button`
 	${commonButtonStyles}
+	border: none;
 `;
 const ButtonLinkComponent = styled(Link)`
 	${commonButtonStyles}

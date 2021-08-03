@@ -39,7 +39,7 @@ function Navbar() {
 
 export default Navbar;
 
-const Nav = styled.nav`
+const Nav = styled(motion.nav)`
 	padding: 2rem;
 	display: flex;
 	width: 100%;
