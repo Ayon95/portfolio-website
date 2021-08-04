@@ -3,12 +3,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 
-function Button({ text, isLink, path }) {
+function Button({ text, type, isLink, path }) {
 	if (isLink) {
 		return <ButtonLinkComponent to={path}>{text}</ButtonLinkComponent>;
 	}
 
-	return <ButtonComponent>{text}</ButtonComponent>;
+	return <ButtonComponent type={type}>{text}</ButtonComponent>;
 }
 
 export default Button;

@@ -5,7 +5,7 @@ const stylesConfig = {
 	bodyTextLetterSpacing: '0.3px',
 
 	// primary color
-	colorPrimary: '#3e2c99',
+	colorPrimary: '#3e2c99', // rgb(62, 44, 153)
 
 	// spacing
 	sectionVerticalPadding: '8rem',

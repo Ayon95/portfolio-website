@@ -7,6 +7,7 @@ import {
 	SiStyledComponents,
 	SiGatsby,
 	SiMongodb,
+	SiFirebase,
 } from 'react-icons/si';
 import { MdDevices } from 'react-icons/md';
 import Skill from './Skill';
@@ -24,6 +25,7 @@ const skills = [
 	{ text: 'Gatsby', icon: SiGatsby, color: '#663399' },
 	{ text: 'Node.js', icon: FaNodeJs, color: '#3e863d' },
 	{ text: 'MongoDB', icon: SiMongodb, color: '#13aa52' },
+	{ text: 'Firebase', icon: SiFirebase, color: '#ffa50f' },
 	{ text: 'Git', icon: FaGitAlt, color: '#f14e32' },
 	{ text: 'npm', icon: FaNpm, color: '#cb3837' },
 ];
@@ -33,7 +35,7 @@ function Skills() {
 		<SectionWrapper title="Skills">
 			<SkillsList>
 				{skills.map(({ text, icon, color }) => (
-					<Skill text={text} icon={icon} color={color} />
+					<Skill key={text} text={text} icon={icon} color={color} />
 				))}
 			</SkillsList>
 		</SectionWrapper>

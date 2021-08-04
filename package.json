@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
+    "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.10.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -27,7 +28,8 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "styled-components": "^5.3.0",
-    "typewriter-effect": "^2.18.0"
+    "typewriter-effect": "^2.18.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "prettier": "2.3.2"
