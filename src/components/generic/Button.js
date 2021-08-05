@@ -2,14 +2,41 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
+import { motion } from 'framer-motion';
+
+const variants = {
+	hoverAndFocus: {
+		scale: 1.1,
+		boxShadow: stylesConfig.glowEffect,
+		transition: {
+			duration: 0.3,
+			ease: 'easeInOut',
+		},
+	},
+};
 
 function Button({ text, type, isDisabled, isLink, path }) {
 	if (isLink) {
-		return <ButtonLinkComponent to={path}>{text}</ButtonLinkComponent>;
+		return (
+			<ButtonLinkComponent
+				to={path}
+				variants={variants}
+				whileHover="hoverAndFocus"
+				whileFocus="hoverAndFocus"
+			>
+				{text}
+			</ButtonLinkComponent>
+		);
 	}
 
 	return (
-		<ButtonComponent type={type} disabled={isDisabled || false}>
+		<ButtonComponent
+			type={type}
+			disabled={isDisabled || false}
+			variants={variants}
+			whileHover="hoverAndFocus"
+			whileFocus="hoverAndFocus"
+		>
 			{text}
 		</ButtonComponent>
 	);
@@ -28,9 +55,10 @@ const commonButtonStyles = css`
 	letter-spacing: 1.2px;
 	font-weight: 700;
 	cursor: pointer;
+	outline: none;
 `;
 
-const ButtonComponent = styled.button`
+const ButtonComponent = styled(motion.button)`
 	${commonButtonStyles}
 	border: none;
 
@@ -39,7 +67,7 @@ const ButtonComponent = styled.button`
 		opacity: 0.5;
 	}
 `;
-const ButtonLinkComponent = styled(Link)`
+const ButtonLinkComponent = styled(motion(Link))`
 	${commonButtonStyles}
 	&:link,
 	&:visited,

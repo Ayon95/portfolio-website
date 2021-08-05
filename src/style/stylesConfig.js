@@ -12,6 +12,9 @@ const stylesConfig = {
 	colorSuccess: '#169c47',
 	colorError: '#e8554a',
 
+	// glow effect
+	glowEffect: '0 0 1.5rem rgba(121, 94, 255, 0.5)',
+
 	// spacing
 	sectionVerticalPadding: '8rem',
 
