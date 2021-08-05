@@ -6,6 +6,7 @@ const stylesConfig = {
 
 	// primary color
 	colorPrimary: '#3e2c99', // rgb(62, 44, 153)
+	colorPrimaryLight: '#523acf',
 
 	// success and error colors
 	colorSuccess: '#169c47',

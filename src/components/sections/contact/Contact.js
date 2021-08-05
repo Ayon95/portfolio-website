@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import emailjs from 'emailjs-com';
 import Snackbar from '../../generic/Snackbar';
 import { AnimatePresence } from 'framer-motion';
+import ContactLinks from './ContactLinks';
 
 // initial form input values
 const initialValues = { name: '', email: '', message: '' };
@@ -81,6 +82,7 @@ function Contact() {
 					);
 				}}
 			</Formik>
+			<ContactLinks />
 			<AnimatePresence>
 				{snackbar.shouldShow && <Snackbar snackbar={snackbar} setSnackbar={setSnackbar} />}
 			</AnimatePresence>
@@ -94,4 +96,5 @@ const FormComponent = styled(Form)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 6rem;
 `;
