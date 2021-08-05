@@ -7,6 +7,10 @@ const stylesConfig = {
 	// primary color
 	colorPrimary: '#3e2c99', // rgb(62, 44, 153)
 
+	// success and error colors
+	colorSuccess: '#169c47',
+	colorError: '#e8554a',
+
 	// spacing
 	sectionVerticalPadding: '8rem',
 

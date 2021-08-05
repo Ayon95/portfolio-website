@@ -80,5 +80,5 @@ const TextAreaInput = styled.textarea`
 
 const ErrorMessageComponent = styled(ErrorMessage)`
 	font-size: 1.8rem;
-	color: #eb655b;
+	color: ${stylesConfig.colorError};
 `;
