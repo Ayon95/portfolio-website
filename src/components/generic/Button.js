@@ -3,12 +3,16 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 
-function Button({ text, type, isLink, path }) {
+function Button({ text, type, isDisabled, isLink, path }) {
 	if (isLink) {
 		return <ButtonLinkComponent to={path}>{text}</ButtonLinkComponent>;
 	}
 
-	return <ButtonComponent type={type}>{text}</ButtonComponent>;
+	return (
+		<ButtonComponent type={type} disabled={isDisabled || false}>
+			{text}
+		</ButtonComponent>
+	);
 }
 
 export default Button;
@@ -29,6 +33,11 @@ const commonButtonStyles = css`
 const ButtonComponent = styled.button`
 	${commonButtonStyles}
 	border: none;
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
 `;
 const ButtonLinkComponent = styled(Link)`
 	${commonButtonStyles}

@@ -24,8 +24,8 @@ function Contact() {
 	/* No need to prevent default action when form is submitted as Formik will do that automatically.
 	Formik will call this function when the form is submitted and pass two arguments.
 	The values object contains the names and values of the form inputs.
-	The second argument is an object that contains various methods like resetForm */
-	async function handleSubmit(values, { resetForm }) {
+	The second argument is an object that contains various methods like resetForm, setSubmitting */
+	async function handleSubmit(values, { resetForm, setSubmitting }) {
 		try {
 			// sending email
 			// the response object will look like {status: 200, text: "OK"}
@@ -41,6 +41,7 @@ function Contact() {
 				throw new Error('Failed to send message. Please try again later.');
 			}
 
+			setSubmitting(false);
 			resetForm();
 
 			// Let the user know that the message was sent successfully
@@ -57,15 +58,21 @@ function Contact() {
 				validateOnChange={false}
 				onSubmit={handleSubmit}
 			>
-				{formik => (
-					<FormComponent noValidate autoComplete="off">
-						<FormInput elementType="basic" type="text" label="Name" name="name" />
-						<FormInput elementType="basic" type="email" label="Email" name="email" />
-						<FormInput elementType="textarea" label="Message" name="message" />
+				{({ isSubmitting }) => {
+					return (
+						<FormComponent noValidate autoComplete="off">
+							<FormInput elementType="basic" type="text" label="Name" name="name" />
+							<FormInput elementType="basic" type="email" label="Email" name="email" />
+							<FormInput elementType="textarea" label="Message" name="message" />
 
-						<Button text="Send Message" type="submit" />
-					</FormComponent>
-				)}
+							<Button
+								text={isSubmitting ? 'Sending...' : 'Send Message'}
+								type="submit"
+								isDisabled={isSubmitting}
+							/>
+						</FormComponent>
+					);
+				}}
 			</Formik>
 		</SectionWrapper>
 	);
