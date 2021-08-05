@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
@@ -19,6 +19,16 @@ function Navbar() {
 	function toggleMenu() {
 		setShouldShowMenu(state => !state);
 	}
+
+	// disable scrolling on body when the hamburger menu is open
+	useEffect(() => {
+		if (shouldShowMenu) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+	}, [shouldShowMenu]);
+
 	return (
 		<Nav>
 			<NavLinksContainer
