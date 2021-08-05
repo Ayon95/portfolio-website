@@ -32,7 +32,7 @@ const skills = [
 
 function Skills() {
 	return (
-		<SectionWrapper title="Skills">
+		<SectionWrapper title="Skills" id="skills">
 			<SkillsList>
 				{skills.map(({ text, icon, color }) => (
 					<Skill key={text} text={text} icon={icon} color={color} />

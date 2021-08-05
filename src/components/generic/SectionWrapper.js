@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
 
-function SectionWrapper({ title, children }) {
+function SectionWrapper({ title, id, children }) {
+	// the id is for scrolling to the section when the fragment containing the id gets added to the url
 	return (
-		<Container>
+		<Container id={id}>
 			<h2>{title}</h2>
 			{children}
 		</Container>

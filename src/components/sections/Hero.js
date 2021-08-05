@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import TypewriterComponent from 'typewriter-effect';
-import stylesConfig from '../../style/stylesConfig';
 import Button from '../generic/Button';
 import FadeInFromBelow from '../animation/FadeInFromBelow';
 import { motion } from 'framer-motion';
@@ -59,5 +58,3 @@ const HeroContent = styled.div`
 		margin-bottom: 4rem;
 	}
 `;
-
-const TextContainer = styled.div``;
