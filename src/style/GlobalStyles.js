@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
         background-image: ${stylesConfig.backgroundGradient};
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
         font-family: 'Poppins', sans-serif;
         color: ${stylesConfig.headingFontColor};
         line-height: 1.3;
@@ -35,6 +35,14 @@ const GlobalStyles = createGlobalStyle`
 
     h2 {
         font-size: 3.4rem;
+    }
+
+    h3 {
+        font-size: 2.6rem;
+    }
+
+    h4 {
+        font-size: 2.2rem;
     }
 
     p {

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import stylesConfig from '../../../style/stylesConfig';
+import Button from './../../generic/Button';
 
 function Project({ project }) {
 	/* The query will return a data object containing allFile property.
@@ -38,6 +39,28 @@ function Project({ project }) {
 			<TextContent>
 				<h3>{project.title}</h3>
 				<p>{project.description}</p>
+				<TechnologiesUsedContainer>
+					<h4>Technologies Used</h4>
+					<ul>
+						{project.technologiesUsed.map(technology => (
+							<li key={technology}>{technology}</li>
+						))}
+					</ul>
+				</TechnologiesUsedContainer>
+				<ButtonsContainer>
+					<Button
+						text="Live Website"
+						isExternalLink={true}
+						url={project.websiteLink}
+						style={{ fontSize: '1.8rem' }}
+					/>
+					<Button
+						text="GitHub Repo"
+						isExternalLink={true}
+						url={project.githubLink}
+						style={{ fontSize: '1.8rem' }}
+					/>
+				</ButtonsContainer>
 			</TextContent>
 		</ProjectContainer>
 	);
@@ -58,11 +81,46 @@ const Image = styled(GatsbyImage)`
 `;
 const TextContent = styled.div`
 	h3 {
-		font-size: 2.6rem;
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
 	}
 	p {
 		font-size: 1.8rem;
 	}
+`;
+
+const TechnologiesUsedContainer = styled.div`
+	margin: 4rem 0;
+	h4 {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	ul {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 15rem);
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	li {
+		color: ${stylesConfig.bodyFontColor};
+		background-color: #1b1a2b;
+		padding: 1rem;
+		border-radius: 4px;
+		font-size: 1.8rem;
+		text-align: center;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+	}
+`;
+
+const ButtonsContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 17rem);
+	justify-content: center;
+	column-gap: 1rem;
+	row-gap: 2rem;
 `;

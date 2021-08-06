@@ -15,7 +15,8 @@ const variants = {
 	},
 };
 
-function Button({ text, type, isDisabled, isLink, path }) {
+function Button({ text, type, isDisabled, isLink, isExternalLink, path, url, ...rest }) {
+	// if the button is an internal link
 	if (isLink) {
 		return (
 			<ButtonLinkComponent
@@ -23,6 +24,24 @@ function Button({ text, type, isDisabled, isLink, path }) {
 				variants={variants}
 				whileHover="hoverAndFocus"
 				whileFocus="hoverAndFocus"
+				{...rest}
+			>
+				{text}
+			</ButtonLinkComponent>
+		);
+	}
+
+	// if the button links to an external web page
+	if (isExternalLink) {
+		return (
+			<ButtonLinkComponent
+				as="a"
+				href={url}
+				target="_blank"
+				variants={variants}
+				whileHover="hoverAndFocus"
+				whileFocus="hoverAndFocus"
+				{...rest}
 			>
 				{text}
 			</ButtonLinkComponent>
@@ -36,6 +55,7 @@ function Button({ text, type, isDisabled, isLink, path }) {
 			variants={variants}
 			whileHover="hoverAndFocus"
 			whileFocus="hoverAndFocus"
+			{...rest}
 		>
 			{text}
 		</ButtonComponent>
