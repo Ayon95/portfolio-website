@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import Contact from '../components/sections/contact/Contact';
 import Hero from '../components/sections/Hero';
+import Projects from '../components/sections/projects/Projects';
 import Skills from '../components/sections/Skills/Skills';
 import GlobalStyles from '../style/GlobalStyles';
 
@@ -11,6 +12,7 @@ export default function Home() {
 			<GlobalStyles />
 			<Layout>
 				<Hero />
+				<Projects />
 				<Skills />
 				<Contact />
 			</Layout>
