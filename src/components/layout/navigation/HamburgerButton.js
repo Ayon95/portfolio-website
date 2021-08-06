@@ -1,12 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import stylesConfig from '../../style/stylesConfig';
+import stylesConfig from '../../../style/stylesConfig';
 import { motion } from 'framer-motion';
 import {
 	fullBarVariants,
 	halfBarContainerVariants,
 	halfBarVariants,
-} from '../../animation/hamburgerButton';
+} from '../../../animation/hamburgerButton';
 
 const fullBarWidth = 5.5;
 

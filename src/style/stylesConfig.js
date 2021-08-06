@@ -17,6 +17,7 @@ const stylesConfig = {
 
 	// spacing
 	sectionVerticalPadding: '8rem',
+	layoutHorizontalPadding: '3rem',
 
 	// background gradient for the app
 	backgroundGradient: 'linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36))',

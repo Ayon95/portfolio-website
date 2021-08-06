@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from '../navigation/Navbar';
+import stylesConfig from '../../style/stylesConfig';
+import Footer from './Footer';
+import Navbar from './navigation/Navbar';
 
 function Layout({ children }) {
 	return (
 		<>
 			<Navbar />
 			<Content>{children}</Content>
+			<Footer />
 		</>
 	);
 }
@@ -17,5 +20,5 @@ const Content = styled.div`
 	width: 100%;
 	max-width: 110rem;
 	margin: 0 auto;
-	padding: 0 3rem;
+	padding: 0 ${stylesConfig.layoutHorizontalPadding};
 `;

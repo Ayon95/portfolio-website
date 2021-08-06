@@ -8,6 +8,7 @@ import {
 	SiGatsby,
 	SiMongodb,
 	SiFirebase,
+	SiRedux,
 } from 'react-icons/si';
 import { MdDevices } from 'react-icons/md';
 import Skill from './Skill';
@@ -21,6 +22,7 @@ const skills = [
 	{ text: 'JavaScript', icon: SiJavascript, color: '#e3e017' },
 	{ text: 'TypeScript', icon: SiTypescript, color: '#2a74d4' },
 	{ text: 'React', icon: FaReact, color: '#61dafb' },
+	{ text: 'Redux Toolkit', icon: SiRedux, color: '#764abc' },
 	{ text: 'styled components', icon: SiStyledComponents, color: '#c74eab' },
 	{ text: 'Gatsby', icon: SiGatsby, color: '#663399' },
 	{ text: 'Node.js', icon: FaNodeJs, color: '#3e863d' },

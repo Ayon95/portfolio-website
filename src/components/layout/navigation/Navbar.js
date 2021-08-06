@@ -2,9 +2,9 @@ import { Link } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import stylesConfig from '../../style/stylesConfig';
+import stylesConfig from '../../../style/stylesConfig';
 import HamburgerButton from './HamburgerButton';
-import { navLinksContainerVariants, navLinkVariants } from '../../animation/hamburgerMenu';
+import { navLinksContainerVariants, navLinkVariants } from '../../../animation/hamburgerMenu';
 
 const navbarLinks = [
 	{ title: 'Projects', url: '/#projects' },
@@ -50,7 +50,7 @@ function Navbar() {
 export default Navbar;
 
 const Nav = styled(motion.nav)`
-	padding: 2rem;
+	padding: ${stylesConfig.layoutHorizontalPadding};
 	display: flex;
 	width: 100%;
 	align-items: center;
