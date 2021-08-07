@@ -21,6 +21,11 @@ const stylesConfig = {
 
 	// background gradient for the app
 	backgroundGradient: 'linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36))',
+
+	// breakpoints
+	bpMedium: '60em', // 960px
+	bpLarge: '75em', // 1200px
+	bpExtraLarge: '112.5em', // 1800px
 };
 
 export default stylesConfig;

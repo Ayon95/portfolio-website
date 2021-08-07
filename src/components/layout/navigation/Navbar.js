@@ -57,6 +57,10 @@ const Nav = styled(motion.nav)`
 	justify-content: flex-end;
 	z-index: 10;
 	background-color: transparent;
+
+	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
+		justify-content: center;
+	}
 `;
 
 const NavLinksContainer = styled(motion.div)`
@@ -71,6 +75,10 @@ const NavLinksContainer = styled(motion.div)`
 	left: 0;
 	background-image: ${stylesConfig.backgroundGradient};
 	z-index: 10;
+
+	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
+		all: unset;
+	}
 `;
 const NavLink = styled(motion(Link))`
 	:not(:last-child) {
