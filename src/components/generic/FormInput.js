@@ -56,8 +56,7 @@ const InputContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: 60rem;
-	margin: 0 auto;
+
 	&:not(:last-child) {
 		margin-bottom: 3rem;
 	}

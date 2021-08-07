@@ -96,5 +96,6 @@ const FormComponent = styled(Form)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 6rem;
+	max-width: 64rem;
+	margin: 0 auto 6rem auto;
 `;

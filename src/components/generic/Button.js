@@ -35,7 +35,7 @@ function Button({ text, type, isDisabled, isLink, isExternalLink, path, url, ...
 	if (isExternalLink) {
 		return (
 			<ButtonLinkComponent
-				as="a"
+				as={motion.a}
 				href={url}
 				target="_blank"
 				variants={variants}

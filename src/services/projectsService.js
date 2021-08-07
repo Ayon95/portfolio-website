@@ -37,4 +37,36 @@ export const projects = [
 		websiteLink: 'https://birthday-reminder-mushfiq.netlify.app/login',
 		githubLink: 'https://github.com/Ayon95/react-birthday-reminder',
 	},
+
+	{
+		title: 'COVID Aware',
+		description:
+			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
+
+		technologiesUsed: ['React', 'Sass'],
+
+		image: {
+			name: 'covid-aware-mockup',
+			alt: 'laptop and mobile mockup of COVID Aware game web app',
+		},
+
+		websiteLink: 'https://covid-aware-game.netlify.app',
+		githubLink: 'https://github.com/Ayon95/react-covid-aware',
+	},
+
+	{
+		title: 'Battleship',
+		description:
+			'A one-player JavaScript implementation of the popular Battleship game. See if you can guess the locations of all three enemy ships.',
+
+		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+
+		image: {
+			name: 'battleship-mockup',
+			alt: 'laptop and mobile mockup of Battleship game web app',
+		},
+
+		websiteLink: 'https://ayon95.github.io/js-battleship',
+		githubLink: 'https://github.com/Ayon95/js-battleship',
+	},
 ];

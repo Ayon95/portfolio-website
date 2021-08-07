@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import stylesConfig from '../../../style/stylesConfig';
 import Button from './../../generic/Button';
@@ -72,6 +72,8 @@ const ProjectContainer = styled.div`
 	background-color: #2b293b;
 	padding: 4rem;
 	border-radius: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0 0.5rem 1.5rem;
+
 	&:not(:last-child) {
 		margin-bottom: 3rem;
 	}

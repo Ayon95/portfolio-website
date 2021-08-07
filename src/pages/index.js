@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
+import About from '../components/sections/About';
 import Contact from '../components/sections/contact/Contact';
 import Hero from '../components/sections/Hero';
 import Projects from '../components/sections/projects/Projects';
@@ -14,6 +15,7 @@ export default function Home() {
 				<Hero />
 				<Projects />
 				<Skills />
+				<About />
 				<Contact />
 			</Layout>
 		</div>

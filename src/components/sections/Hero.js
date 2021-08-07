@@ -22,7 +22,7 @@ function Hero() {
 				<h1>
 					<TypewriterComponent
 						options={{
-							strings: ["Hi, I'm Mushfiq Rahman", 'Welcome to my website'],
+							strings: ["Hi, I'm Mushfiq", 'Welcome to my website'],
 							autoStart: true,
 							loop: true,
 						}}
