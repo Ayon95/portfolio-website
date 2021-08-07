@@ -56,6 +56,10 @@ const HamburgerButtonContainer = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
 	z-index: 20;
+
+	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
+		display: none;
+	}
 `;
 
 const FullBar = styled(motion.span)`

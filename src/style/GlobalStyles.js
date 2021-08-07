@@ -55,7 +55,6 @@ const GlobalStyles = createGlobalStyle`
     a {
         text-decoration: none;
         color: ${stylesConfig.bodyFontColor};
-        font-size: 3rem;
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
     }
 `;

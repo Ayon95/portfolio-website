@@ -13,15 +13,19 @@ function useMediaQuery(mediaQueryString) {
 			setMatches(mediaQueryList.matches);
 		}
 
-		// adding an event handler that will get called whenever the media query status changes
-		mediaQueryList.addEventListener('change', () => {
+		function updateMediaQueryStatus() {
 			setMatches(mediaQueryList.matches);
-		});
+		}
+
+		// adding an event handler that will get called whenever the media query status changes
+		mediaQueryList.addEventListener('change', updateMediaQueryStatus);
 
 		// cleanup function that will remove the event listener
-		return () => mediaQueryList.removeEventListener('change');
+		return () => mediaQueryList.removeEventListener('change', updateMediaQueryStatus);
 	}, [mediaQueryString, matches]);
+
+	return matches;
 }
 
 // custom hook for determining whether the screen matches the mediq query defined for medium-sized screen
-export const useIsMediumScreen = useMediaQuery(`(min-width: ${stylesConfig.bpMedium})`);
+export const useIsMediumScreen = () => useMediaQuery(`(min-width: ${stylesConfig.bpMedium})`);
