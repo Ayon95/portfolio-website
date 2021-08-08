@@ -12,12 +12,16 @@ const stylesConfig = {
 	colorSuccess: '#169c47',
 	colorError: '#e8554a',
 
+	// body background color
+	bodyBackgroundColor: '#171726',
+
 	// glow effect
 	glowEffect: '0 0 1.5rem rgba(121, 94, 255, 0.5)',
 
-	// spacing
+	// spacing and layout
 	sectionVerticalPadding: '8rem',
 	layoutHorizontalPadding: '3rem',
+	sectionMaxWidth: '110rem',
 
 	// background gradient for the app
 	backgroundGradient: 'linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36))',

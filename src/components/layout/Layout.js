@@ -18,7 +18,7 @@ export default Layout;
 
 const Content = styled.div`
 	width: 100%;
-	max-width: 110rem;
+	max-width: ${stylesConfig.sectionMaxWidth};
 	margin: 0 auto;
 	padding: 0 ${stylesConfig.layoutHorizontalPadding};
 `;

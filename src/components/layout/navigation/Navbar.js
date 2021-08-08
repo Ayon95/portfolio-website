@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
@@ -6,6 +7,7 @@ import stylesConfig from '../../../style/stylesConfig';
 import HamburgerButton from './HamburgerButton';
 import { navLinksContainerVariants, navLinkVariants } from '../../../animation/hamburgerMenu';
 import { useIsMediumScreen } from './../../../hooks/useMediaQuery';
+import logo from '../../../images/logo-portfolio.png';
 
 const navbarLinks = [
 	{ title: 'Projects', url: '/#projects' },
@@ -46,17 +48,22 @@ function Navbar() {
 
 	return (
 		<Nav>
-			<NavLinksContainer
-				variants={navLinksContainerVariants}
-				animate={getNavLinksContainerAnimation()}
-			>
-				{navbarLinks.map(link => (
-					<NavLink to={link.url} key={link.title} onClick={closeMenu} variants={navLinkVariants}>
-						{link.title}
-					</NavLink>
-				))}
-			</NavLinksContainer>
-			<HamburgerButton shouldShowMenu={shouldShowMenu} toggleMenu={toggleMenu} />
+			<NavContent>
+				<LogoWrapper to="/">
+					<img src={logo} alt="Website logo" />
+				</LogoWrapper>
+				<NavLinksContainer
+					variants={navLinksContainerVariants}
+					animate={getNavLinksContainerAnimation()}
+				>
+					{navbarLinks.map(link => (
+						<NavLink to={link.url} key={link.title} onClick={closeMenu} variants={navLinkVariants}>
+							{link.title}
+						</NavLink>
+					))}
+				</NavLinksContainer>
+				<HamburgerButton shouldShowMenu={shouldShowMenu} toggleMenu={toggleMenu} />
+			</NavContent>
 		</Nav>
 	);
 }
@@ -65,16 +72,29 @@ export default Navbar;
 
 const Nav = styled.nav`
 	position: fixed;
+	/* background-color: ${stylesConfig.bodyBackgroundColor}; */
+	background-color: #131320;
 	padding: ${stylesConfig.layoutHorizontalPadding};
-	display: flex;
 	width: 100%;
-	align-items: center;
-	justify-content: flex-end;
 	z-index: 10;
 
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
-		justify-content: center;
-		box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+		/* box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); */
+	}
+`;
+
+const NavContent = styled.div`
+	width: 100%;
+	max-width: ${stylesConfig.sectionMaxWidth};
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+const LogoWrapper = styled(Link)`
+	img {
+		width: 10rem;
 	}
 `;
 

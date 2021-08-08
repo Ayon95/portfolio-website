@@ -108,7 +108,7 @@ const TechnologiesUsedContainer = styled.div`
 
 	li {
 		color: ${stylesConfig.bodyFontColor};
-		background-color: #1b1a2b;
+		background-color: ${stylesConfig.bodyBackgroundColor};
 		padding: 1rem;
 		border-radius: 4px;
 		font-size: 1.8rem;

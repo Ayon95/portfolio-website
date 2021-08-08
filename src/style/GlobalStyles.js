@@ -19,8 +19,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-size: 2rem;
         font-family: 'Nunito Sans', sans-serif;
-        background-color: black;
-        background-image: ${stylesConfig.backgroundGradient};
+        background-color: ${stylesConfig.bodyBackgroundColor};
     }
 
     h1, h2, h3, h4 {
