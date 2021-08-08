@@ -1,4 +1,4 @@
-/* How the animation will work:
+/* How the animation will work (for mobile):
 Opening the menu:
 - First, the link container will appear
 - then each link will appear one after another (stagger effect)

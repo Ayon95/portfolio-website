@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
         box-sizing: border-box;
         scroll-behavior: smooth;
+        scroll-padding-top: 6rem;
     }
 
     body {
@@ -52,6 +53,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a {
+        display: inline-block;
         text-decoration: none;
         color: ${stylesConfig.bodyFontColor};
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};

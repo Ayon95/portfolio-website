@@ -1,6 +1,5 @@
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import stylesConfig from '../../../style/stylesConfig';
@@ -10,14 +9,17 @@ import { useIsMediumScreen } from './../../../hooks/useMediaQuery';
 import logo from '../../../images/logo-portfolio.png';
 
 const navbarLinks = [
-	{ title: 'Projects', url: '/#projects' },
-	{ title: 'Skills', url: '/#skills' },
-	{ title: 'About', url: '/#about' },
-	{ title: 'Contact', url: '/#contact' },
+	{ title: 'Projects', path: '/#projects' },
+	{ title: 'Skills', path: '/#skills' },
+	{ title: 'About', path: '/#about' },
+	{ title: 'Contact', path: '/#contact' },
 ];
 
 function Navbar() {
 	const [shouldShowMenu, setShouldShowMenu] = useState(false);
+	// for having a reference to each nav link
+	// will need a reference to each link because I have to remove its 'style' attribute
+	const navLinksRef = useRef([]);
 
 	const isMediumScreen = useIsMediumScreen();
 
@@ -56,8 +58,19 @@ function Navbar() {
 					variants={navLinksContainerVariants}
 					animate={getNavLinksContainerAnimation()}
 				>
-					{navbarLinks.map(link => (
-						<NavLink to={link.url} key={link.title} onClick={closeMenu} variants={navLinkVariants}>
+					{navbarLinks.map((link, index) => (
+						<NavLink
+							href={link.path}
+							key={link.title}
+							onClick={closeMenu}
+							// using this callback ref to store the current nav link element in the navLinksRef array
+							ref={currentElement => (navLinksRef.current[index] = currentElement)}
+							variants={navLinkVariants}
+							onAnimationComplete={() => {
+								// removing the lingering style (inline style) attribute of the nav link
+								navLinksRef.current[index].removeAttribute('style');
+							}}
+						>
 							{link.title}
 						</NavLink>
 					))}
@@ -68,19 +81,22 @@ function Navbar() {
 	);
 }
 
-export default Navbar;
+/* Wrapping the Navbar component with React.memo() to prevent it from getting re-rendered
+when reach router's location object changes due to clicking on a nav link.
+When a nav link is being clicked, the url path is changing, hence the location object is changing.
+Reach router passes location, history, and matches props to the component it wraps (in this case, the entire app).
+This is why, when the location prop changes, the entire app is getting re-rendered.
+
+Preventing the re-render of Navbar component is important because the removed inline style
+of each nav link is coming back when Navbar is re-rendering. */
+export default React.memo(Navbar);
 
 const Nav = styled.nav`
 	position: fixed;
-	/* background-color: ${stylesConfig.bodyBackgroundColor}; */
-	background-color: #131320;
+	background-color: ${stylesConfig.navBackgroundColor};
 	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	z-index: 10;
-
-	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
-		/* box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); */
-	}
 `;
 
 const NavContent = styled.div`
@@ -110,7 +126,7 @@ const NavLinksContainer = styled(motion.div)`
 	top: 0;
 	left: 0;
 
-	background-image: ${stylesConfig.backgroundGradient};
+	background-color: ${stylesConfig.navBackgroundColor};
 	z-index: 10;
 	opacity: 0;
 	transform: translateX(100vw);
@@ -119,24 +135,35 @@ const NavLinksContainer = styled(motion.div)`
 		all: unset;
 	}
 `;
-const NavLink = styled(motion(Link))`
+const NavLink = styled(motion.a)`
 	opacity: 0;
 	transform: translateX(100vw);
 	font-size: 3rem;
 
 	:not(:last-child) {
 		margin-bottom: 3rem;
+
+		@media only screen and (min-width: ${stylesConfig.bpMedium}) {
+			margin-bottom: 0;
+			margin-right: 3rem;
+		}
 	}
 
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
 		opacity: 1;
 		transform: translateX(0);
 
-		margin-bottom: 0;
 		font-size: 2.2rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid transparent;
 
-		:not(:last-child) {
-			margin-right: 3rem;
+		transition: all 0.3s;
+	}
+
+	@media only screen and (hover: hover) and (pointer: fine) {
+		&:hover {
+			color: ${stylesConfig.colorPrimaryLight};
+			transform: translateY(-1rem);
 		}
 	}
 `;

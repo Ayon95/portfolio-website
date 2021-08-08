@@ -15,6 +15,9 @@ const stylesConfig = {
 	// body background color
 	bodyBackgroundColor: '#171726',
 
+	// nav background color
+	navBackgroundColor: '#131320',
+
 	// glow effect
 	glowEffect: '0 0 1.5rem rgba(121, 94, 255, 0.5)',
 

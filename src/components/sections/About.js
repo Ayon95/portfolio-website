@@ -4,7 +4,7 @@ import SectionWrapper from '../generic/SectionWrapper';
 
 function About() {
 	return (
-		<SectionContainer title="About me">
+		<SectionContainer title="About me" id="about">
 			<p>
 				Hi, I'm Mushfiq Rahman, a web developer based in Waterloo, Canada. I enjoy building web
 				applications with clean and beautiful interfaces that provide a delightful user experience.
