@@ -67,7 +67,9 @@ function Navbar() {
 							ref={currentElement => (navLinksRef.current[index] = currentElement)}
 							variants={navLinkVariants}
 							onAnimationComplete={() => {
-								// removing the lingering style (inline style) attribute of the nav link
+								// don't remove the inline style when the screen is not medium-sized
+								if (!isMediumScreen) return;
+								// removing the lingering style (inline style that is staying after an animation) attribute of the nav link
 								navLinksRef.current[index].removeAttribute('style');
 							}}
 						>
@@ -138,6 +140,7 @@ const NavLinksContainer = styled(motion.div)`
 const NavLink = styled(motion.a)`
 	opacity: 0;
 	transform: translateX(100vw);
+	outline: none;
 	font-size: 3rem;
 
 	:not(:last-child) {
@@ -149,21 +152,21 @@ const NavLink = styled(motion.a)`
 		}
 	}
 
+	:focus-visible {
+		color: ${stylesConfig.colorPrimaryLight};
+		text-shadow: ${stylesConfig.glowEffect};
+	}
+
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
 		opacity: 1;
 		transform: translateX(0);
-
-		font-size: 2.2rem;
-		padding-bottom: 0.5rem;
-		border-bottom: 2px solid transparent;
-
-		transition: all 0.3s;
+		transition: color 0.3s, transform 0.3s;
+		font-size: 2rem;
 	}
 
 	@media only screen and (hover: hover) and (pointer: fine) {
 		&:hover {
 			color: ${stylesConfig.colorPrimaryLight};
-			transform: translateY(-1rem);
 		}
 	}
 `;

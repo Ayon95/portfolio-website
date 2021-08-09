@@ -69,7 +69,7 @@ const commonButtonStyles = css`
 	padding: 1.5rem 2.5rem;
 	border-radius: 10rem;
 	background-color: ${stylesConfig.colorPrimary};
-	font-size: 2.2rem;
+	font-size: 2rem;
 	font-family: 'Nunito Sans';
 	color: #eee;
 	letter-spacing: 1.2px;

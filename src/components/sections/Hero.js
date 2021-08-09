@@ -54,6 +54,7 @@ const HeroContent = styled.div`
 	}
 
 	p {
+		font-size: 2rem;
 		max-width: 35ch;
 		margin-bottom: 4rem;
 	}

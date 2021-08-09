@@ -46,7 +46,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     p {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         line-height: 1.5;
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
         color: ${stylesConfig.bodyFontColor};

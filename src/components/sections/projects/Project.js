@@ -86,9 +86,6 @@ const TextContent = styled.div`
 		text-align: center;
 		margin-bottom: 4rem;
 	}
-	p {
-		font-size: 1.8rem;
-	}
 `;
 
 const TechnologiesUsedContainer = styled.div`
