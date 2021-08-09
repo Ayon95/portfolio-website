@@ -15,7 +15,7 @@ const navbarLinks = [
 	{ title: 'Contact', path: '/#contact' },
 ];
 
-function Navbar() {
+function Navbar({ heroSectionInView }) {
 	const [shouldShowMenu, setShouldShowMenu] = useState(false);
 	// for having a reference to each nav link
 	// will need a reference to each link because I have to remove its 'style' attribute
@@ -49,7 +49,7 @@ function Navbar() {
 	}, [shouldShowMenu]);
 
 	return (
-		<Nav>
+		<Nav heroSectionInView={heroSectionInView}>
 			<NavContent>
 				<LogoWrapper to="/">
 					<img src={logo} alt="Website logo" />
@@ -94,8 +94,9 @@ of each nav link is coming back when Navbar is re-rendering. */
 export default React.memo(Navbar);
 
 const Nav = styled.nav`
-	position: fixed;
-	background-color: ${stylesConfig.navBackgroundColor};
+	position: ${props => (props.heroSectionInView ? 'static' : 'fixed')};
+	background-color: ${props =>
+		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};
 	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	z-index: 10;

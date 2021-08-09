@@ -4,10 +4,10 @@ import stylesConfig from '../../style/stylesConfig';
 import Footer from './Footer';
 import Navbar from './navigation/Navbar';
 
-function Layout({ children }) {
+function Layout({ heroSectionInView, children }) {
 	return (
 		<>
-			<Navbar />
+			<Navbar heroSectionInView={heroSectionInView} />
 			<Content>{children}</Content>
 			<Footer />
 		</>

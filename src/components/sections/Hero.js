@@ -15,9 +15,9 @@ const subtitleVariants = {
 	},
 };
 
-function Hero() {
+const Hero = React.forwardRef((_, ref) => {
 	return (
-		<Container>
+		<Container ref={ref}>
 			<HeroContent>
 				<h1>
 					<TypewriterComponent
@@ -37,7 +37,7 @@ function Hero() {
 			</HeroContent>
 		</Container>
 	);
-}
+});
 
 export default Hero;
 
