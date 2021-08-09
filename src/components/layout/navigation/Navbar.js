@@ -94,12 +94,13 @@ of each nav link is coming back when Navbar is re-rendering. */
 export default React.memo(Navbar);
 
 const Nav = styled.nav`
-	position: ${props => (props.heroSectionInView ? 'static' : 'fixed')};
+	position: ${props => (props.heroSectionInView ? 'absolute' : 'fixed')};
 	background-color: ${props =>
 		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};
 	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	z-index: 10;
+	transition: background-color 0.6s;
 `;
 
 const NavContent = styled.div`

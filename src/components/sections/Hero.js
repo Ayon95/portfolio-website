@@ -42,8 +42,7 @@ const Hero = React.forwardRef((_, ref) => {
 export default Hero;
 
 const Container = styled.section`
-	/* subtracting the height of the nav bar */
-	height: calc(100vh - 8.8rem);
+	height: 100vh;
 	display: flex;
 	align-items: center;
 `;

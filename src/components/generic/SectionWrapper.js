@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
+import FadeInWhenInView from '../animation/FadeInWhenInView';
 
 function SectionWrapper({ title, id, children, className }) {
 	// the id is for scrolling to the section when the fragment containing the id gets added to the url
 	// the className prop is for extending the style of this custom component if needed
 	return (
-		<Container id={id} className={className}>
-			<h2>{title}</h2>
-			{children}
-		</Container>
+		<FadeInWhenInView>
+			<Container id={id} className={className}>
+				<h2>{title}</h2>
+				{children}
+			</Container>
+		</FadeInWhenInView>
 	);
 }
 
