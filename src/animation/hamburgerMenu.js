@@ -7,8 +7,6 @@ Closing the menu:
 - first, each link will disappear one after another
 - then the link container will disappear*/
 
-import stylesConfig from '../style/stylesConfig';
-
 export const navLinksContainerVariants = {
 	hidden: {
 		x: '100vw',

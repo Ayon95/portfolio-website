@@ -12,7 +12,7 @@ const fullBarWidth = 4.5;
 
 function HamburgerButton({ shouldShowMenu, toggleMenu }) {
 	return (
-		<HamburgerButtonContainer onClick={toggleMenu}>
+		<HamburgerButtonContainer onClick={toggleMenu} tabIndex={0}>
 			<FullBar
 				custom={{ rotate: 45, y: 15 }}
 				variants={fullBarVariants}

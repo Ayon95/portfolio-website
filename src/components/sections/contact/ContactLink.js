@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import stylesConfig from '../../../style/stylesConfig';
 
 function ContactLink({ title, url, icon: Icon }) {

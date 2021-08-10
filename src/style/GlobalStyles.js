@@ -16,6 +16,10 @@ const GlobalStyles = createGlobalStyle`
         scroll-behavior: smooth;
         scroll-padding-top: 16rem;
 
+        ${'' /* scroll bar styles that will work on Firefox */}
+        scrollbar-width: auto;
+        scrollbar-color: ${stylesConfig.colorPrimary} #2b293b;
+
         @media only screen and (max-width: ${stylesConfig.bpExtraSmall}) {
             font-size: 50%;
 	    }
@@ -74,6 +78,25 @@ const GlobalStyles = createGlobalStyle`
         color: ${stylesConfig.bodyFontColor};
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
     }
+
+    ${'' /* scrollbar styles that will work on Chrome, Edge, and Safari */}
+        ::-webkit-scrollbar {
+            width: 1.5rem;
+        }
+
+        ::-webkit-scrollbar-track {
+        background-image: linear-gradient(to bottom, #2b293b, ${stylesConfig.bodyBackgroundColor});
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-image: linear-gradient(
+                to bottom,
+                ${stylesConfig.colorPrimaryLight},
+                ${stylesConfig.colorPrimary}
+            );
+            box-shadow: ${stylesConfig.glowEffect};
+            border-radius: 10rem;
+        }
 `;
 
 export default GlobalStyles;
