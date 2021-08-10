@@ -11,7 +11,7 @@ const subtitleVariants = {
 	visible: {
 		x: 0,
 		opacity: 1,
-		transition: { delay: 0.5, duration: 1, ease: 'easeOut' },
+		transition: { delay: 2.7, duration: 1, ease: 'easeOut' },
 	},
 };
 
@@ -49,6 +49,7 @@ const Container = styled.section`
 
 const HeroContent = styled.div`
 	margin-top: 2rem;
+
 	h1 {
 		margin-bottom: 2rem;
 	}

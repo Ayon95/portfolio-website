@@ -10,11 +10,11 @@ const variants = {
 	visible: {
 		y: 0,
 		opacity: 1,
-		transition: { duration: 1, ease: 'easeOut' },
+		transition: { duration: 1, delay: 3.2, ease: 'easeOut' },
 	},
 };
 
-function FadeInFromBelow({ children }) {
+function FadeInFromBelow({ delay, children }) {
 	return (
 		<motion.div variants={variants} initial="hidden" animate="visible">
 			{children}

@@ -6,7 +6,7 @@ import {
 	fullBarVariants,
 	halfBarContainerVariants,
 	halfBarVariants,
-} from '../../../animation/hamburgerButton';
+} from '../../../services/animationService/hamburgerButton';
 
 const fullBarWidth = 4.5;
 

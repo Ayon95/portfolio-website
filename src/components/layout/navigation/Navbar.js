@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import stylesConfig from '../../../style/stylesConfig';
 import HamburgerButton from './HamburgerButton';
-import { navLinksContainerVariants, navLinkVariants } from '../../../animation/hamburgerMenu';
+import {
+	navLinksContainerVariants,
+	navLinkVariants,
+} from '../../../services/animationService/hamburgerMenu';
 import { useIsMediumScreen } from './../../../hooks/useMediaQuery';
 import logo from '../../../images/logo-portfolio.png';
 
