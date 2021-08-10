@@ -35,7 +35,11 @@ function Project({ project }) {
 
 	return (
 		<ProjectContainer>
-			<Image image={projectNode.childImageSharp.gatsbyImageData} alt={project.image.alt} />
+			<Image
+				image={projectNode.childImageSharp.gatsbyImageData}
+				imgStyle={{ objectFit: 'contain' }}
+				alt={project.image.alt}
+			/>
 			<TextContent>
 				<h3>{project.title}</h3>
 				<p>{project.description}</p>
@@ -70,29 +74,46 @@ export default Project;
 
 const ProjectContainer = styled.div`
 	background-color: #2b293b;
-	padding: 4rem;
+	padding: ${stylesConfig.projectLayoutSpacing};
 	border-radius: 1rem;
 	box-shadow: rgba(0, 0, 0, 0.35) 0 0.5rem 1.5rem;
 
 	&:not(:last-child) {
 		margin-bottom: 3rem;
 	}
+
+	@media only screen and (min-width: ${stylesConfig.bpLarge}) {
+		display: flex;
+
+		& > * {
+			flex: 1;
+		}
+	}
 `;
 const Image = styled(GatsbyImage)`
-	margin-bottom: 4rem;
+	margin-bottom: ${stylesConfig.projectLayoutSpacing};
+
+	@media only screen and (min-width: ${stylesConfig.bpLarge}) {
+		margin-right: ${stylesConfig.projectLayoutSpacing};
+	}
 `;
 const TextContent = styled.div`
 	h3 {
 		text-align: center;
-		margin-bottom: 4rem;
+		margin-bottom: ${stylesConfig.projectLayoutSpacing};
+	}
+
+	p {
+		max-width: 60ch;
+		margin: 0 auto;
 	}
 `;
 
 const TechnologiesUsedContainer = styled.div`
-	margin: 4rem 0;
+	margin: ${stylesConfig.projectLayoutSpacing} 0;
 	h4 {
 		text-align: center;
-		margin-bottom: 4rem;
+		margin-bottom: ${stylesConfig.projectLayoutSpacing};
 	}
 
 	ul {
@@ -118,7 +139,7 @@ const TechnologiesUsedContainer = styled.div`
 
 const ButtonsContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 17rem);
+	grid-template-columns: repeat(auto-fit, max-content);
 	justify-content: center;
 	column-gap: 1rem;
 	row-gap: 2rem;

@@ -12,11 +12,6 @@ function ContactLink({ title, url, icon: Icon }) {
 
 export default ContactLink;
 
-const focusAndHoverStyles = css`
-	fill: ${stylesConfig.colorPrimaryLight};
-	transform: scale(1.2);
-`;
-
 const ContactLinkComponent = styled.a`
 	outline: none;
 
@@ -24,18 +19,20 @@ const ContactLinkComponent = styled.a`
 		margin-right: 4rem;
 	}
 
-	&:focus svg {
-		${focusAndHoverStyles}
+	&:focus-visible svg {
+		fill: ${stylesConfig.colorPrimaryLight};
+		filter: drop-shadow(${stylesConfig.glowEffect});
 	}
 
 	svg {
-		transition: transform 0.2s, fill 0.2s;
+		font-size: 3rem;
+		transition: filter 0.3s, fill 0.3s;
 	}
 
 	/* apply hover styles to the svg icon only for devices that support mouse hover state */
 	@media only screen and (hover: hover) and (pointer: fine) {
 		svg:hover {
-			${focusAndHoverStyles}
+			fill: ${stylesConfig.colorPrimaryLight};
 		}
 	}
 `;

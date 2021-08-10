@@ -20,7 +20,7 @@ export default About;
 const SectionContainer = styled(SectionWrapper)`
 	p {
 		width: 100%;
-		max-width: 50ch;
+		max-width: 55ch;
 		margin: 0 auto;
 	}
 `;

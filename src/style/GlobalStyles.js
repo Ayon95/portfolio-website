@@ -14,7 +14,23 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%;
         box-sizing: border-box;
         scroll-behavior: smooth;
-        scroll-padding-top: 6rem;
+        scroll-padding-top: 16rem;
+
+        @media only screen and (max-width: ${stylesConfig.bpExtraSmall}) {
+            font-size: 50%;
+	    }
+
+        @media only screen and (min-width: ${stylesConfig.bpSmall}) {
+            font-size: 67%;
+	    }
+
+        @media only screen and (min-width: ${stylesConfig.bpMedium}) {
+            font-size: 72%;
+	    }
+
+        @media only screen and (min-width: ${stylesConfig.bpExtraLarge}) {
+            font-size: 90%;
+	    }
     }
 
     body {

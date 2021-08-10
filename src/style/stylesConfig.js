@@ -25,12 +25,15 @@ const stylesConfig = {
 	sectionVerticalPadding: '8rem',
 	layoutHorizontalPadding: '3rem',
 	sectionMaxWidth: '110rem',
+	projectLayoutSpacing: '4rem',
 
 	// background gradient for the app
 	backgroundGradient: 'linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36))',
 
 	// breakpoints
-	bpMedium: '60em', // 960px
+	bpExtraSmall: '21.88em', // 350px
+	bpSmall: '37.5em', // 600px
+	bpMedium: '56.25em', // 960px
 	bpLarge: '75em', // 1200px
 	bpExtraLarge: '112.5em', // 1800px
 };

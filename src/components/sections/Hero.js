@@ -48,6 +48,7 @@ const Container = styled.section`
 `;
 
 const HeroContent = styled.div`
+	margin-top: 2rem;
 	h1 {
 		margin-bottom: 2rem;
 	}

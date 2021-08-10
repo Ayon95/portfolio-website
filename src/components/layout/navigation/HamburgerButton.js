@@ -8,7 +8,7 @@ import {
 	halfBarVariants,
 } from '../../../animation/hamburgerButton';
 
-const fullBarWidth = 5.5;
+const fullBarWidth = 4.5;
 
 function HamburgerButton({ shouldShowMenu, toggleMenu }) {
 	return (
@@ -36,7 +36,7 @@ function HamburgerButton({ shouldShowMenu, toggleMenu }) {
 				/>
 			</HalfBarContainer>
 			<FullBar
-				custom={{ rotate: -45, y: -20 }}
+				custom={{ rotate: -45, y: -18 }}
 				variants={fullBarVariants}
 				animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 			/>
@@ -49,7 +49,7 @@ export default HamburgerButton;
 const barCommonStyles = css`
 	display: inline-block;
 	background-color: ${stylesConfig.colorPrimary};
-	height: 0.8rem;
+	height: 0.6rem;
 `;
 
 const HamburgerButtonContainer = styled(motion.div)`

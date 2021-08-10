@@ -97,13 +97,13 @@ const Nav = styled.nav`
 	position: ${props => (props.heroSectionInView ? 'absolute' : 'fixed')};
 	background-color: ${props =>
 		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};
-	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	z-index: 10;
 	transition: background-color 0.6s;
 `;
 
 const NavContent = styled.div`
+	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	max-width: ${stylesConfig.sectionMaxWidth};
 	margin: 0 auto;
@@ -114,7 +114,7 @@ const NavContent = styled.div`
 
 const LogoWrapper = styled(Link)`
 	img {
-		width: 10rem;
+		width: 7rem;
 	}
 `;
 
@@ -162,7 +162,7 @@ const NavLink = styled(motion.a)`
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
 		opacity: 1;
 		transform: translateX(0);
-		transition: color 0.3s, transform 0.3s;
+		transition: color 0.3s, text-shadow 0.3s;
 		font-size: 2rem;
 	}
 
