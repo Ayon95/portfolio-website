@@ -29,7 +29,7 @@ const Hero = React.forwardRef((_, ref) => {
 					/>
 				</h1>
 				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">
-					A web developer with a passion for creating wonderful interactive experiences on the web.{' '}
+					A web developer with a passion for creating amazing interactive experiences on the web.{' '}
 				</motion.p>
 				<FadeInFromBelow>
 					<Button text="View Projects" isLink={true} path="/#projects" />

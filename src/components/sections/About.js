@@ -11,6 +11,11 @@ function About() {
 				I love learning new technologies and concepts related to web development. I find delight in
 				solving problems with clean, simple, and easy-to-understand code.
 			</p>
+
+			<p>
+				I am excited to work with and learn from the experts in the industry, and continue to grow
+				myself as a developer.
+			</p>
 		</SectionContainer>
 	);
 }
@@ -22,5 +27,9 @@ const SectionContainer = styled(SectionWrapper)`
 		width: 100%;
 		max-width: 55ch;
 		margin: 0 auto;
+
+		:not(:last-child) {
+			margin-bottom: 2rem;
+		}
 	}
 `;

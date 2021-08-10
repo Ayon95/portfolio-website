@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React, { useEffect, useState, useRef } from 'react';
+import { useLocation } from '@reach/router';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import stylesConfig from '../../../style/stylesConfig';
@@ -21,10 +22,12 @@ const navbarLinks = [
 function Navbar({ heroSectionInView }) {
 	const [shouldShowMenu, setShouldShowMenu] = useState(false);
 	// for having a reference to each nav link
-	// will need a reference to each link because I have to remove its 'style' attribute
+	// will need a reference to each link in order to remove its 'style' attribute
 	const navLinksRef = useRef([]);
 
 	const isMediumScreen = useIsMediumScreen();
+
+	const location = useLocation();
 
 	function toggleMenu() {
 		setShouldShowMenu(state => !state);
@@ -66,6 +69,8 @@ function Navbar({ heroSectionInView }) {
 							href={link.path}
 							key={link.title}
 							onClick={closeMenu}
+							path={link.path}
+							currentPath={`/${location.hash}`}
 							// using this callback ref to store the current nav link element in the navLinksRef array
 							ref={currentElement => (navLinksRef.current[index] = currentElement)}
 							variants={navLinkVariants}
@@ -147,6 +152,9 @@ const NavLink = styled(motion.a)`
 	transform: translateX(100vw);
 	outline: none;
 	font-size: 3rem;
+	/* style to show active link */
+	color: ${props =>
+		props.currentPath === props.path ? stylesConfig.colorPrimaryLight : stylesConfig.bodyFontColor};
 
 	:not(:last-child) {
 		margin-bottom: 3rem;
