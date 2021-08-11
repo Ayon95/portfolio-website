@@ -139,7 +139,7 @@ const TechnologiesUsedContainer = styled.div`
 
 const ButtonsContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, max-content);
+	grid-template-columns: repeat(auto-fit, minmax(max-content, 16rem));
 	justify-content: center;
 	column-gap: 1rem;
 	row-gap: 2rem;

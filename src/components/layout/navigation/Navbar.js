@@ -10,7 +10,7 @@ import {
 	navLinkVariants,
 } from '../../../services/animationService/hamburgerMenu';
 import { useIsMediumScreen } from './../../../hooks/useMediaQuery';
-import logo from '../../../images/logo-portfolio.png';
+import logo from '../../../assets/images/logo-portfolio.png';
 
 const navbarLinks = [
 	{ title: 'Projects', path: '/#projects' },
@@ -75,7 +75,7 @@ function Navbar({ heroSectionInView }) {
 							ref={currentElement => (navLinksRef.current[index] = currentElement)}
 							variants={navLinkVariants}
 							onAnimationComplete={() => {
-								// don't remove the inline style when the screen is not medium-sized
+								// don't remove the inline style when the screen is smaller than medium-sized screen
 								if (!isMediumScreen) return;
 								// removing the lingering style (inline style that is staying after an animation) attribute of the nav link
 								navLinksRef.current[index].removeAttribute('style');
@@ -151,7 +151,7 @@ const NavLink = styled(motion.a)`
 	opacity: 0;
 	transform: translateX(100vw);
 	outline: none;
-	font-size: 3rem;
+	font-size: 2.6rem;
 	/* style to show active link */
 	color: ${props =>
 		props.currentPath === props.path ? stylesConfig.colorPrimaryLight : stylesConfig.bodyFontColor};

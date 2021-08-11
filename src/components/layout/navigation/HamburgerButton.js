@@ -8,13 +8,13 @@ import {
 	halfBarVariants,
 } from '../../../services/animationService/hamburgerButton';
 
-const fullBarWidth = 4.5;
+const fullBarWidth = 40;
 
 function HamburgerButton({ shouldShowMenu, toggleMenu }) {
 	return (
 		<HamburgerButtonContainer onClick={toggleMenu} tabIndex={0}>
 			<FullBar
-				custom={{ rotate: 45, y: 15 }}
+				custom={{ y: 13, rotate: 45 }}
 				variants={fullBarVariants}
 				animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 			/>
@@ -36,7 +36,7 @@ function HamburgerButton({ shouldShowMenu, toggleMenu }) {
 				/>
 			</HalfBarContainer>
 			<FullBar
-				custom={{ rotate: -45, y: -18 }}
+				custom={{ y: -13, rotate: -45 }}
 				variants={fullBarVariants}
 				animate={shouldShowMenu ? 'menuOpen' : 'menuClosed'}
 			/>
@@ -49,7 +49,8 @@ export default HamburgerButton;
 const barCommonStyles = css`
 	display: inline-block;
 	background-color: ${stylesConfig.colorPrimary};
-	height: 0.6rem;
+	${'' /* using px because I want the size of the hamburger button to be fixed */}
+	height: 5px;
 `;
 
 const HamburgerButtonContainer = styled(motion.div)`
@@ -64,16 +65,16 @@ const HamburgerButtonContainer = styled(motion.div)`
 
 const FullBar = styled(motion.span)`
 	${barCommonStyles}
-	width: ${fullBarWidth}rem;
+	width: ${fullBarWidth}px;
 	border-radius: 1rem;
 `;
 
 const HalfBarContainer = styled(motion.div)`
 	display: flex;
-	margin: 1rem 0;
+	margin: 8px 0;
 `;
 
 const HalfBar = styled(motion.span)`
 	${barCommonStyles}
-	width: ${fullBarWidth / 2}rem;
+	width: ${fullBarWidth / 2}px;
 `;

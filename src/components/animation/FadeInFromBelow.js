@@ -14,7 +14,7 @@ const variants = {
 	},
 };
 
-function FadeInFromBelow({ delay, children }) {
+function FadeInFromBelow({ children }) {
 	return (
 		<motion.div variants={variants} initial="hidden" animate="visible">
 			{children}

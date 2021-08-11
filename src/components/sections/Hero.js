@@ -4,6 +4,7 @@ import TypewriterComponent from 'typewriter-effect';
 import Button from '../generic/Button';
 import FadeInFromBelow from '../animation/FadeInFromBelow';
 import { motion } from 'framer-motion';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const subtitleVariants = {
 	hidden: { x: -60, opacity: 0 },
@@ -16,6 +17,14 @@ const subtitleVariants = {
 };
 
 const Hero = React.forwardRef((_, ref) => {
+	// making a query to get the resume
+	const data = useStaticQuery(graphql`
+		query ResumeQuery {
+			file(relativePath: { eq: "mushfiq_rahman_resume.pdf" }) {
+				publicURL
+			}
+		}
+	`);
 	return (
 		<Container ref={ref}>
 			<HeroContent>
@@ -31,9 +40,15 @@ const Hero = React.forwardRef((_, ref) => {
 				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">
 					A web developer with a passion for creating amazing interactive experiences on the web.{' '}
 				</motion.p>
-				<FadeInFromBelow>
-					<Button text="View Projects" isLink={true} path="/#projects" />
-				</FadeInFromBelow>
+				<ButtonsContainer>
+					<FadeInFromBelow>
+						<Button text="View Projects" isLink={true} path="/#projects" />
+					</FadeInFromBelow>
+
+					<FadeInFromBelow>
+						<Button text="View Resume" isExternalLink={true} url={data.file.publicURL} />
+					</FadeInFromBelow>
+				</ButtonsContainer>
 			</HeroContent>
 		</Container>
 	);
@@ -45,6 +60,13 @@ const Container = styled.section`
 	height: 100vh;
 	display: flex;
 	align-items: center;
+`;
+
+const ButtonsContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(max-content, 19rem));
+	column-gap: 1rem;
+	row-gap: 2rem;
 `;
 
 const HeroContent = styled.div`
