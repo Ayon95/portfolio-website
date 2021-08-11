@@ -8,6 +8,7 @@ import Hero from '../components/sections/Hero';
 import Projects from '../components/sections/projects/Projects';
 import Skills from '../components/sections/Skills/Skills';
 import GlobalStyles from '../style/GlobalStyles';
+import favicon from '../assets/images/favicon.ico';
 
 export default function Home() {
 	/* Ref for the hero section, and a boolean that will indicate whether the hero section is in view or not.
@@ -23,6 +24,7 @@ export default function Home() {
 			<GlobalStyles />
 			<Helmet>
 				<title>Mushfiq Rahman | Web Developer</title>
+				<link rel="icon" href={favicon} />
 			</Helmet>
 			<Layout heroSectionInView={heroSectionInView}>
 				<Hero ref={heroSectionRef} />
