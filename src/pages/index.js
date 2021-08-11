@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useInView } from 'react-intersection-observer';
 import Layout from '../components/layout/Layout';
 import About from '../components/sections/About';
@@ -20,6 +21,9 @@ export default function Home() {
 	return (
 		<div id="app">
 			<GlobalStyles />
+			<Helmet>
+				<title>Mushfiq Rahman | Web Developer</title>
+			</Helmet>
 			<Layout heroSectionInView={heroSectionInView}>
 				<Hero ref={heroSectionRef} />
 				<Projects />

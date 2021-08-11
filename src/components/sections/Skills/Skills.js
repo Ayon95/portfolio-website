@@ -15,8 +15,8 @@ import Skill from './Skill';
 import SectionWrapper from '../../generic/SectionWrapper';
 
 const skills = [
-	{ text: 'HTML5', icon: FaHtml5, color: '#f05a1a' },
-	{ text: 'CSS3', icon: FaCss3Alt, color: '#2965f1' },
+	{ text: 'HTML', icon: FaHtml5, color: '#f05a1a' },
+	{ text: 'CSS', icon: FaCss3Alt, color: '#2965f1' },
 	{ text: 'Sass', icon: FaSass, color: '#c752a6' },
 	{ text: 'Responsive Design', icon: MdDevices, color: '#4ddbb3' },
 	{ text: 'JavaScript', icon: SiJavascript, color: '#e3e017' },
