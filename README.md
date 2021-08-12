@@ -11,6 +11,8 @@ Link to the website: https://mushfiq-rahman.netlify.app/
 - How to use styled components with Gatsby
 - How to use Framer Motion to add animations
 - How to use react-intersection-observer and Framer Motion together to trigger animations when an element comes into view or goes out of view
+- How to create an accessible, keyboard-friendly hamburger navigation menu
+- How to highlight a navigation link when the user scrolls to the associated section
 - How to use EmailJS to set up an email-receiving service
 
 ## Tools and technologies used

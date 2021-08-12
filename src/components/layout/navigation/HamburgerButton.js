@@ -68,10 +68,16 @@ const barCommonStyles = css`
 
 const HamburgerButtonComponent = styled(motion.button)`
 	background: none;
+	outline: none;
 	border: none;
 	display: flex;
 	flex-direction: column;
 	z-index: 20;
+
+	&:focus-visible {
+		outline: solid ${stylesConfig.colorPrimaryLight};
+		outline-offset: 1rem;
+	}
 
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
 		display: none;

@@ -144,6 +144,13 @@ const Nav = styled.nav`
 `;
 
 const LogoWrapper = styled(Link)`
+	outline: none;
+
+	&:focus-visible {
+		outline: solid ${stylesConfig.colorPrimaryLight};
+		outline-offset: 1rem;
+	}
+
 	img {
 		width: 7rem;
 	}

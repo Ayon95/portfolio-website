@@ -70,6 +70,11 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1.55;
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
         color: ${stylesConfig.bodyFontColor};
+
+        &::selection {
+            background-color: ${stylesConfig.colorPrimary};
+            color: #eee;
+        }
     }
 
     a {
