@@ -48,6 +48,9 @@ const inputStyles = css`
 	transition: box-shadow 0.3s;
 
 	&:focus {
+		${'' /* box shadow support for Safari */}
+		-webkit-appearance: none;
+		-webkit-box-shadow: 0 0 2px 2px inset rgb(62, 44, 153);
 		box-shadow: 0 0 2px 2px inset rgb(62, 44, 153);
 	}
 `;

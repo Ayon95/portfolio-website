@@ -17,7 +17,7 @@ export default function Home() {
 	const [heroSectionRef, heroSectionInView] = useInView({
 		threshold: 0,
 		root: null,
-		rootMargin: '-80px',
+		rootMargin: '-150px',
 	});
 	return (
 		<div id="app">
