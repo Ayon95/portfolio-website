@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from '@reach/router';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
@@ -11,6 +11,7 @@ import {
 } from '../../../services/animationService/hamburgerMenu';
 import logo from '../../../assets/images/logo-portfolio.png';
 import { useIsMediumScreen } from './../../../hooks/useMediaQuery';
+import FocusLock from 'react-focus-lock';
 
 const navbarLinks = [
 	{ title: 'Projects', path: '/#projects' },
@@ -26,8 +27,20 @@ function Navbar({ heroSectionInView }) {
 
 	const location = useLocation();
 
+	// Need a ref to the hamburger button so that it can be programmatically focused when a user closes the hamburger menu by pressing Escape
+	const hamburgerButtonRef = useRef();
+
 	function toggleMenu() {
 		setShouldShowMenu(state => !state);
+	}
+
+	// this event handler will close the opened hamburger menu when the Escape key is pressed
+	function handlePressEscape(event) {
+		if (shouldShowMenu && event.key === 'Escape') {
+			setShouldShowMenu(false);
+			// focus on the hamburger button after the menu was closed by pressing Esc
+			hamburgerButtonRef.current.focus();
+		}
 	}
 
 	// disable scrolling on body when the hamburger menu is open
@@ -39,50 +52,65 @@ function Navbar({ heroSectionInView }) {
 		}
 	}, [shouldShowMenu]);
 
+	/* Accessibility
+	- The FocusLock component will trap focus within the Nav component when the hamburger menu is open
+	- The website logo should not be focusable when the hamburger menu is open
+	- The nav links in the hamburger menu should only be focusable when the hamburger menu is open
+	- The hamburger menu should be hidden to screen readers when it is closed
+	*/
 	return (
-		<Nav heroSectionInView={heroSectionInView}>
-			<NavContent>
-				<LogoWrapper to="/">
-					<img src={logo} alt="Website logo" />
-				</LogoWrapper>
-				{isMediumScreen && (
-					<NavLinksContainer>
-						{navbarLinks.map(link => (
-							<NavLink
-								href={link.path}
-								key={link.title}
-								path={link.path}
-								currentPath={`/${location.hash}`}
-							>
-								{link.title}
-							</NavLink>
-						))}
-					</NavLinksContainer>
-				)}
-				{/* render the animated versions (animated hamburger menu) when the viewport width is smaller than that specified for medium-sized screens */}
-				{!isMediumScreen && (
-					<AnimatedNavLinksContainer
-						variants={navLinksContainerVariants}
-						initial="hidden"
-						animate={shouldShowMenu ? 'visible' : 'hidden'}
-					>
-						{navbarLinks.map(link => (
-							<AnimatedNavLink
-								href={link.path}
-								key={link.title}
-								onClick={toggleMenu}
-								path={link.path}
-								currentPath={`/${location.hash}`}
-								variants={navLinkVariants}
-							>
-								{link.title}
-							</AnimatedNavLink>
-						))}
-					</AnimatedNavLinksContainer>
-				)}
-				<HamburgerButton shouldShowMenu={shouldShowMenu} toggleMenu={toggleMenu} />
-			</NavContent>
-		</Nav>
+		<NavContainer heroSectionInView={heroSectionInView}>
+			<FocusLock disabled={!shouldShowMenu}>
+				<Nav>
+					<LogoWrapper to="/" tabIndex={shouldShowMenu ? -1 : 0}>
+						<img src={logo} alt="Mushfiq Rahman Logo Home" />
+					</LogoWrapper>
+					<HamburgerButton
+						shouldShowMenu={shouldShowMenu}
+						toggleMenu={toggleMenu}
+						handlePressEscape={handlePressEscape}
+						ref={hamburgerButtonRef}
+					/>
+					{isMediumScreen && (
+						<NavLinks>
+							{navbarLinks.map(link => (
+								<li key={link.title}>
+									<NavLink href={link.path} path={link.path} currentPath={`/${location.hash}`}>
+										{link.title}
+									</NavLink>
+								</li>
+							))}
+						</NavLinks>
+					)}
+					{/* render the animated versions (animated hamburger menu) when the viewport width is smaller than that specified for medium-sized screens */}
+					{!isMediumScreen && (
+						<AnimatedNavLinks
+							id="navigation menu"
+							variants={navLinksContainerVariants}
+							initial="hidden"
+							animate={shouldShowMenu ? 'visible' : 'hidden'}
+							aria-hidden={!shouldShowMenu}
+						>
+							{navbarLinks.map(link => (
+								<li key={link.title}>
+									<AnimatedNavLink
+										href={link.path}
+										onClick={toggleMenu}
+										onKeyDown={handlePressEscape}
+										path={link.path}
+										currentPath={`/${location.hash}`}
+										tabIndex={shouldShowMenu ? 0 : -1}
+										variants={navLinkVariants}
+									>
+										{link.title}
+									</AnimatedNavLink>
+								</li>
+							))}
+						</AnimatedNavLinks>
+					)}
+				</Nav>
+			</FocusLock>
+		</NavContainer>
 	);
 }
 
@@ -100,7 +128,7 @@ const commonNavLinkStyles = css`
 	}
 `;
 
-const Nav = styled.nav`
+const NavContainer = styled.div`
 	position: ${props => (props.heroSectionInView ? 'absolute' : 'fixed')};
 	background-color: ${props =>
 		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};
@@ -109,7 +137,7 @@ const Nav = styled.nav`
 	transition: background-color 0.6s;
 `;
 
-const NavContent = styled.div`
+const Nav = styled.nav`
 	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	max-width: ${stylesConfig.sectionMaxWidth};
@@ -125,9 +153,17 @@ const LogoWrapper = styled(Link)`
 	}
 `;
 
-const NavLinksContainer = styled.div``;
+const NavLinks = styled.ul`
+	list-style: none;
+	display: flex;
 
-const AnimatedNavLinksContainer = styled(motion.div)`
+	li:not(:last-child) {
+		margin-right: 3rem;
+	}
+`;
+
+const AnimatedNavLinks = styled(motion.ul)`
+	list-style: none;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -142,6 +178,10 @@ const AnimatedNavLinksContainer = styled(motion.div)`
 	background-color: ${stylesConfig.navBackgroundColor};
 	z-index: 10;
 
+	li:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
 		all: unset;
 	}
@@ -152,10 +192,6 @@ const NavLink = styled.a`
 
 	font-size: 2rem;
 	transition: color 0.3s, text-shadow 0.3s;
-
-	&:not(:last-child) {
-		margin-right: 3rem;
-	}
 
 	@media only screen and (hover: hover) and (pointer: fine) {
 		&:hover {
@@ -168,8 +204,4 @@ const AnimatedNavLink = styled(motion.a)`
 	${commonNavLinkStyles}
 
 	font-size: 2.6rem;
-
-	&:not(:last-child) {
-		margin-bottom: 3rem;
-	}
 `;
