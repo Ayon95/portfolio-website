@@ -118,10 +118,6 @@ export default Navbar;
 
 const commonNavLinkStyles = css`
 	outline: none;
-	/* style to show active link */
-	color: ${props =>
-		props.currentPath === props.path ? stylesConfig.colorPrimaryLight : stylesConfig.bodyFontColor};
-
 	&:focus-visible {
 		color: ${stylesConfig.colorPrimaryLight};
 		text-shadow: ${stylesConfig.glowEffect};
@@ -129,6 +125,7 @@ const commonNavLinkStyles = css`
 `;
 
 const NavContainer = styled.div`
+	padding: ${stylesConfig.layoutHorizontalPadding};
 	position: ${props => (props.heroSectionInView ? 'absolute' : 'fixed')};
 	background-color: ${props =>
 		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};
@@ -138,7 +135,6 @@ const NavContainer = styled.div`
 `;
 
 const Nav = styled.nav`
-	padding: ${stylesConfig.layoutHorizontalPadding};
 	width: 100%;
 	max-width: ${stylesConfig.sectionMaxWidth};
 	margin: 0 auto;

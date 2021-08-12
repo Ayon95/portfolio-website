@@ -13,6 +13,7 @@ import {
 import { MdDevices } from 'react-icons/md';
 import Skill from './Skill';
 import SectionWrapper from '../../generic/SectionWrapper';
+import { useInView } from 'react-intersection-observer';
 
 const skills = [
 	{ text: 'HTML', icon: FaHtml5, color: '#f05a1a' },
@@ -33,8 +34,18 @@ const skills = [
 ];
 
 function Skills() {
+	const [skillsSectionRef, skillsSectionInView] = useInView({
+		threshold: 0.4,
+		root: null,
+		rootMargin: '-80px',
+	});
 	return (
-		<SectionWrapper title="Skills" id="skills">
+		<SectionWrapper
+			title="Skills"
+			id="skills"
+			ref={skillsSectionRef}
+			sectionInView={skillsSectionInView}
+		>
 			<SkillsList>
 				{skills.map(({ text, icon, color }) => (
 					<Skill key={text} text={text} icon={icon} color={color} />

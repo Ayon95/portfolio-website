@@ -67,7 +67,7 @@ const GlobalStyles = createGlobalStyle`
 
     p {
         font-size: 1.8rem;
-        line-height: 1.5;
+        line-height: 1.55;
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
         color: ${stylesConfig.bodyFontColor};
     }
@@ -77,6 +77,10 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: none;
         color: ${stylesConfig.bodyFontColor};
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
+    }
+
+    .active-link {
+        color: ${stylesConfig.colorPrimaryLight};
     }
 
     ${'' /* scrollbar styles that will work on Chrome, Edge, and Safari */}

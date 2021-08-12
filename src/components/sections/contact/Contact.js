@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import Snackbar from '../../generic/Snackbar';
 import { AnimatePresence } from 'framer-motion';
 import ContactLinks from './ContactLinks';
+import { useInView } from 'react-intersection-observer';
 
 // initial form input values
 const initialValues = { name: '', email: '', message: '' };
@@ -28,6 +29,11 @@ function Contact() {
 		shouldShow: false,
 		type: '',
 		message: '',
+	});
+
+	const [contactSectionRef, contactSectionInView] = useInView({
+		threshold: 0.35,
+		root: null,
 	});
 
 	/* No need to prevent default action when form is submitted as Formik will do that automatically.
@@ -59,7 +65,12 @@ function Contact() {
 		}
 	}
 	return (
-		<SectionWrapper title="Get in touch" id="contact">
+		<SectionWrapper
+			title="Get in touch"
+			id="contact"
+			ref={contactSectionRef}
+			sectionInView={contactSectionInView}
+		>
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
