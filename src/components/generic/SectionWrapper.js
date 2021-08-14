@@ -35,7 +35,7 @@ const SectionWrapper = React.forwardRef(
 			} else {
 				sectionNavLink.classList.remove('active-link');
 			}
-		}, [sectionInView]);
+		}, [sectionInView, id]);
 
 		// scroll to that particular section when the page reloads and the section mounts if the id is included in the url fragment identifier
 		useEffect(() => {
