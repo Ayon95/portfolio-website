@@ -7,6 +7,7 @@ import {
 	SiStyledComponents,
 	SiGatsby,
 	SiMongodb,
+	SiMysql,
 	SiFirebase,
 	SiRedux,
 } from 'react-icons/si';
@@ -27,6 +28,7 @@ const skills = [
 	{ text: 'styled components', icon: SiStyledComponents, color: '#c74eab' },
 	{ text: 'Gatsby', icon: SiGatsby, color: '#663399' },
 	{ text: 'Node.js', icon: FaNodeJs, color: '#3e863d' },
+	{ text: 'MySQL', icon: SiMysql, color: '#4479A1' },
 	{ text: 'MongoDB', icon: SiMongodb, color: '#13aa52' },
 	{ text: 'Firebase', icon: SiFirebase, color: '#ffa50f' },
 	{ text: 'Git', icon: FaGitAlt, color: '#f14e32' },

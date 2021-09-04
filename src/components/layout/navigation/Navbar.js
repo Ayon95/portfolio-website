@@ -1,6 +1,5 @@
 import { Link } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from '@reach/router';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../../style/stylesConfig';
@@ -24,8 +23,6 @@ function Navbar({ heroSectionInView }) {
 	const [shouldShowMenu, setShouldShowMenu] = useState(false);
 	// isMediumScreen will be true when the viewport width is at least the width specified for medium-sized screens
 	const isMediumScreen = useIsMediumScreen();
-
-	const location = useLocation();
 
 	// Need a ref to the hamburger button so that it can be programmatically focused when a user closes the hamburger menu by pressing Escape
 	const hamburgerButtonRef = useRef();
@@ -75,9 +72,7 @@ function Navbar({ heroSectionInView }) {
 						<NavLinks>
 							{navbarLinks.map(link => (
 								<li key={link.title}>
-									<NavLink href={link.path} path={link.path} currentPath={`/${location.hash}`}>
-										{link.title}
-									</NavLink>
+									<NavLink href={link.path}>{link.title}</NavLink>
 								</li>
 							))}
 						</NavLinks>
@@ -97,8 +92,6 @@ function Navbar({ heroSectionInView }) {
 										href={link.path}
 										onClick={toggleMenu}
 										onKeyDown={handlePressEscape}
-										path={link.path}
-										currentPath={`/${location.hash}`}
 										tabIndex={shouldShowMenu ? 0 : -1}
 										variants={navLinkVariants}
 									>
