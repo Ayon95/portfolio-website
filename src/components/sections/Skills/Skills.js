@@ -4,6 +4,7 @@ import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaNodeJs, FaGitAlt, FaNpm } from '
 import {
 	SiJavascript,
 	SiTypescript,
+	SiMaterialUi,
 	SiStyledComponents,
 	SiGatsby,
 	SiMongodb,
@@ -25,6 +26,7 @@ const skills = [
 	{ text: 'TypeScript', icon: SiTypescript, color: '#2a74d4' },
 	{ text: 'React', icon: FaReact, color: '#61dafb' },
 	{ text: 'Redux Toolkit', icon: SiRedux, color: '#764abc' },
+	{ text: 'Material UI', icon: SiMaterialUi, color: '#0081CB' },
 	{ text: 'styled components', icon: SiStyledComponents, color: '#c74eab' },
 	{ text: 'Gatsby', icon: SiGatsby, color: '#663399' },
 	{ text: 'Node.js', icon: FaNodeJs, color: '#3e863d' },
