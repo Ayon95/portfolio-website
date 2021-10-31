@@ -27,7 +27,7 @@ export const projects = [
 		description:
 			'An appointment-management app that allows users to add, edit, or delete their appointments. Doctors can store and manage patient information such as name, age, phone number, and appointment date.',
 
-		technologiesUsed: ['Material UI', 'React', 'React Query', 'Express', 'MySQL'],
+		technologiesUsed: ['Material UI', 'React', 'React Query', 'Formik', 'Express', 'MySQL'],
 		image: {
 			name: 'easy-appoint-mockup',
 			alt: 'laptop and mobile mockup of EasyAppoint app',
@@ -42,7 +42,7 @@ export const projects = [
 		description:
 			'A React application that allows users to save birthdays of people that they want to remember. It tells a user if there is any birthday today, and also if there are any upcoming birthdays. Give it a try with these fake credentials (email: dummy123@email.com, password: dummy456) ',
 
-		technologiesUsed: ['React', 'Sass', 'Firebase'],
+		technologiesUsed: ['React', 'Sass', 'Formik', 'Firebase'],
 
 		image: {
 			name: 'birthday-reminder-mockup',
