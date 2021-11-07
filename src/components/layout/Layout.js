@@ -16,7 +16,7 @@ function Layout({ heroSectionInView, children }) {
 
 export default Layout;
 
-const Content = styled.div`
+const Content = styled.main`
 	width: 100%;
 	max-width: ${stylesConfig.sectionMaxWidth};
 	margin: 0 auto;
