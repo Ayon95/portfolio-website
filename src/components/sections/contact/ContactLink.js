@@ -5,7 +5,7 @@ import stylesConfig from '../../../style/stylesConfig';
 function ContactLink({ title, url, icon: Icon }) {
 	return (
 		<ContactLinkComponent href={url} title={title} target="_blank">
-			<Icon />
+			<Icon aria-hidden="true" />
 		</ContactLinkComponent>
 	);
 }
