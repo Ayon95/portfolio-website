@@ -32,8 +32,10 @@ const SectionWrapper = React.forwardRef(
 			const sectionNavLink = document.querySelector(`a[href="/#${id}"]`);
 			if (sectionInView) {
 				sectionNavLink.classList.add('active-link');
+				sectionNavLink.setAttribute('aria-current', 'true');
 			} else {
 				sectionNavLink.classList.remove('active-link');
+				sectionNavLink.removeAttribute('aria-current');
 			}
 		}, [sectionInView, id]);
 
