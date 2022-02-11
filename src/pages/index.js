@@ -23,6 +23,10 @@ export default function Home() {
 		<div id="app">
 			<GlobalStyles />
 			<Helmet>
+				<meta
+					name="description"
+					content="Portfolio website of Mushfiq Rahman, a front-end developer"
+				/>
 				<title>Mushfiq Rahman | Web Developer</title>
 				<link rel="icon" href={favicon} />
 			</Helmet>
