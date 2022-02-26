@@ -38,6 +38,22 @@ export const projects = [
 	},
 
 	{
+		title: 'Easybank Landing Page',
+		description:
+			'A landing page for a fictional banking company. This was one of the challenges from Frontend Mentor.',
+
+		technologiesUsed: ['HTML', 'Sass', 'JavaScript'],
+		image: {
+			name: 'easybank-landing-page-mockup',
+			alt: 'laptop and mobile mockup of Easybank landing page',
+		},
+
+		websiteLink: 'https://fm-challenge-easybank-landing-page.netlify.app/',
+		githubLink:
+			'https://github.com/Ayon95/frontend-mentor-challenges/tree/master/easybank-landing-page',
+	},
+
+	{
 		title: 'Birthday Reminder',
 		description:
 			'A React application that allows users to save birthdays of people that they want to remember. It tells a user if there is any birthday today, and also if there are any upcoming birthdays. Give it a try with these fake credentials (email: dummy123@email.com, password: dummy456) ',
