@@ -4,7 +4,7 @@ import stylesConfig from '../../../style/stylesConfig';
 
 function ContactLink({ title, url, icon: Icon }) {
 	return (
-		<ContactLinkComponent href={url} title={title} target="_blank">
+		<ContactLinkComponent href={url} aria-label={title} target="_blank">
 			<Icon aria-hidden="true" />
 		</ContactLinkComponent>
 	);
@@ -26,6 +26,7 @@ const ContactLinkComponent = styled.a`
 
 	svg {
 		font-size: 3rem;
+		fill: currentColor;
 		transition: filter 0.3s, fill 0.3s;
 	}
 
