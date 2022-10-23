@@ -5,7 +5,7 @@ import stylesConfig from '../../style/stylesConfig';
 function Footer() {
 	return (
 		<FooterComponent>
-			<p>&copy; 2021. Designed and developed by Mushfiq Rahman.</p>
+			<p>&copy; {new Date(Date.now()).getFullYear()}. Designed and developed by Mushfiq Rahman.</p>
 		</FooterComponent>
 	);
 }
