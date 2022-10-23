@@ -11,6 +11,7 @@ import {
 	SiMysql,
 	SiFirebase,
 	SiRedux,
+	SiRails,
 } from 'react-icons/si';
 import { MdDevices } from 'react-icons/md';
 import Skill from './Skill';
@@ -30,6 +31,7 @@ const skills = [
 	{ text: 'styled components', icon: SiStyledComponents, color: '#c74eab' },
 	{ text: 'Gatsby', icon: SiGatsby, color: '#663399' },
 	{ text: 'Node.js', icon: FaNodeJs, color: '#3e863d' },
+	{ text: 'Ruby On Rails', icon: SiRails, color: '#cc0000' },
 	{ text: 'MySQL', icon: SiMysql, color: '#4479A1' },
 	{ text: 'MongoDB', icon: SiMongodb, color: '#13aa52' },
 	{ text: 'Firebase', icon: SiFirebase, color: '#ffa50f' },
