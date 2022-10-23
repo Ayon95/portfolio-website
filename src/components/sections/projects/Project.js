@@ -58,12 +58,14 @@ function Project({ project }) {
 						url={project.websiteLink}
 						style={{ fontSize: '1.8rem' }}
 					/>
-					<Button
+					{project.githubLink && (
+						<Button
 						text="GitHub Repo"
 						isExternalLink={true}
 						url={project.githubLink}
 						style={{ fontSize: '1.8rem' }}
 					/>
+					)}
 				</ButtonsContainer>
 			</TextContent>
 		</ProjectContainer>

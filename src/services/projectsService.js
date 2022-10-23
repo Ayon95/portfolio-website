@@ -1,5 +1,21 @@
 export const projects = [
 	{
+		title: 'Nikean Website',
+		description: 'Website and video platform for Nikean Foundation',
+		technologiesUsed: [
+			'HTML',
+			'CSS',
+			'Bootstrap',
+			'JavaScript',
+			'Ruby On Rails'
+		],
+		image: {
+			name: 'nikean-mockup',
+			alt: 'laptop and mobile mockup of Nikean website',
+		},
+		websiteLink: 'https://nikean.org/'
+	},
+	{
 		title: 'Memories',
 		description:
 			"A social-media application that allows users to share their memorable moments, or popular places they have visited. They can also like and comment on other people's posts. Give it a try with these fake credentials (email: john123@email.com, password: john123).",
