@@ -15,6 +15,22 @@ export const projects = [
 		},
 		websiteLink: 'https://nikean.org/'
 	},
+
+	{
+		title: 'COVID Aware',
+		description:
+			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
+
+		technologiesUsed: ['React', 'Sass'],
+
+		image: {
+			name: 'covid-aware-mockup',
+			alt: 'laptop and mobile mockup of COVID Aware game web app',
+		},
+
+		websiteLink: 'https://covidaware.netlify.app/',
+	},
+
 	{
 		title: 'Memories',
 		description:
@@ -54,22 +70,6 @@ export const projects = [
 	},
 
 	{
-		title: 'Easybank Landing Page',
-		description:
-			'A landing page for a fictional banking company. This was one of the challenges from Frontend Mentor.',
-
-		technologiesUsed: ['HTML', 'Sass', 'JavaScript'],
-		image: {
-			name: 'easybank-landing-page-mockup',
-			alt: 'laptop and mobile mockup of Easybank landing page',
-		},
-
-		websiteLink: 'https://fm-challenge-easybank-landing-page.netlify.app/',
-		githubLink:
-			'https://github.com/Ayon95/frontend-mentor-challenges/tree/master/easybank-landing-page',
-	},
-
-	{
 		title: 'Birthday Reminder',
 		description:
 			'A React application that allows users to save birthdays of people that they want to remember. It tells a user if there is any birthday today, and also if there are any upcoming birthdays. Give it a try with these fake credentials (email: dummy123@email.com, password: dummy456) ',
@@ -83,22 +83,6 @@ export const projects = [
 
 		websiteLink: 'https://birthday-reminder-mushfiq.netlify.app/login',
 		githubLink: 'https://github.com/Ayon95/react-birthday-reminder',
-	},
-
-	{
-		title: 'COVID Aware',
-		description:
-			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
-
-		technologiesUsed: ['React', 'Sass'],
-
-		image: {
-			name: 'covid-aware-mockup',
-			alt: 'laptop and mobile mockup of COVID Aware game web app',
-		},
-
-		websiteLink: 'https://covid-aware-game.netlify.app',
-		githubLink: 'https://github.com/Ayon95/react-covid-aware',
 	},
 
 	{
