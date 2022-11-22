@@ -55,6 +55,18 @@ export const projects = [
 	},
 
 	{
+		title: 'Wanless Supermarket',
+		description: 'Website for Wanless Supermarket, a Bangladeshi grocery store in Brampton',
+		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+		image: {
+			name: 'wanless-supermarket-mockup',
+			alt: 'laptop and mobile mockup of Wanless Supermarket website',
+		},
+
+		websiteLink: 'https://wanlesssupermarket.netlify.app/'
+	},
+
+	{
 		title: 'EasyAppoint',
 		description:
 			'An appointment-management app that allows users to add, edit, or delete their appointments. Doctors can store and manage patient information such as name, age, phone number, and appointment date.',
