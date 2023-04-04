@@ -17,6 +17,23 @@ export const projects = [
 	},
 
 	{
+		title: 'Violet Rails',
+		description: 'CMS and Web platform built with Ruby on Rails',
+		technologiesUsed: [
+			'HTML',
+			'CSS',
+			'Bootstrap',
+			'JavaScript',
+			'Ruby On Rails'
+		],
+		image: {
+			name: 'violet-rails-mockup',
+			alt: 'laptop and mobile mockup of Violet Rails website',
+		},
+		websiteLink: 'https://violet.restarone.solutions/'
+	},
+
+	{
 		title: 'COVID Aware',
 		description:
 			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
