@@ -16,15 +16,15 @@ function About() {
 			sectionInView={aboutSectionInView}
 		>
 			<p>
-				Hi, I'm Mushfiq Rahman, a web developer based in Waterloo, Canada. I enjoy building web
-				applications with clean and beautiful interfaces that provide a delightful user experience.
-				I love learning new technologies and concepts related to web development. I find delight in
-				solving problems with clean, simple, and easy-to-understand code.
+				Hi, I am Mushfiq Rahman, a web developer based in Waterloo, Canada. I am passionate about
+				building interactive, accessible, responsive websites and web applications. I love learning
+				new technologies, concepts, and best practices related to programming and web development.
+				Apart from coding, I enjoy watching and playing soccer, hiking, and fishkeeping.
 			</p>
 
 			<p>
-				I am excited to work with and learn from the experts in the industry, and continue to grow
-				myself as a developer.
+				I am always eager to work with talented creative individuals, share my knowledge with
+				others, as well as learn from them, and continue to grow myself as a developer.
 			</p>
 		</SectionContainer>
 	);

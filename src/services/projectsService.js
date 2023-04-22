@@ -45,7 +45,7 @@ export const projects = [
 			alt: 'laptop and mobile mockup of COVID Aware game web app',
 		},
 
-		websiteLink: 'https://covidaware.netlify.app/',
+		websiteLink: 'https://covidawaregame.com/',
 	},
 
 	{
