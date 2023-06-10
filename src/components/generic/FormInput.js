@@ -22,7 +22,7 @@ function FormInput(props) {
 							value={field.value}
 							onChange={field.onChange}
 							onBlur={field.onBlur}
-							rows={6}
+							rows={4}
 						/>
 					)}
 				</Field>
@@ -51,6 +51,7 @@ const inputStyles = css`
 		${'' /* box shadow support for Safari */}
 		-webkit-appearance: none;
 		-webkit-box-shadow: 0 0 2px 2px inset rgb(62, 44, 153);
+		appearance: none;
 		box-shadow: 0 0 2px 2px inset rgb(62, 44, 153);
 	}
 `;
@@ -68,8 +69,8 @@ const InputContainer = styled.div`
 const InputLabel = styled.label`
 	color: ${stylesConfig.bodyFontColor};
 	font-weight: 600;
-	font-size: 2.2rem;
-	margin-bottom: 0.8rem;
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
 `;
 
 const Input = styled(Field)`

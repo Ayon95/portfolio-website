@@ -42,11 +42,11 @@ const Hero = React.forwardRef((_, ref) => {
 				</motion.p>
 				<ButtonsContainer>
 					<FadeInFromBelow>
-						<Button text="View Projects" isLink={true} path="/#projects" />
+						<Button text="Projects" isLink={true} path="/#projects" />
 					</FadeInFromBelow>
 
 					<FadeInFromBelow>
-						<Button text="View Resume" isExternalLink={true} url={data.file.publicURL} />
+						<Button text="Resume" isExternalLink={true} url={data.file.publicURL} />
 					</FadeInFromBelow>
 				</ButtonsContainer>
 			</HeroContent>
@@ -57,14 +57,15 @@ const Hero = React.forwardRef((_, ref) => {
 export default Hero;
 
 const Container = styled.section`
-	height: 100vh;
+	min-height: 100vh;
+	min-height: 100svh;
 	display: flex;
 	align-items: center;
 `;
 
 const ButtonsContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(max-content, 19rem));
+	grid-template-columns: repeat(auto-fit, minmax(max-content, 13rem));
 	column-gap: 1rem;
 	row-gap: 2rem;
 `;
@@ -73,7 +74,7 @@ const HeroContent = styled.div`
 	margin-top: 2rem;
 
 	h1 {
-		margin-bottom: 2rem;
+		margin-bottom: 1.6rem;
 	}
 
 	p {

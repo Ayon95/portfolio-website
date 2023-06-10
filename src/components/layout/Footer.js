@@ -13,12 +13,12 @@ function Footer() {
 export default Footer;
 
 const FooterComponent = styled.footer`
-	border-top: 2px solid ${stylesConfig.colorPrimary};
-	padding: 4rem ${stylesConfig.layoutHorizontalPadding};
+	padding: 3rem ${stylesConfig.layoutHorizontalPadding};
 
 	p {
 		color: ${stylesConfig.bodyFontColor};
+		opacity: 0.85;
 		text-align: center;
-		font-size: 1.8rem;
+		font-size: 1.4rem;
 	}
 `;

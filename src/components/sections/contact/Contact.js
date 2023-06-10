@@ -66,7 +66,7 @@ function Contact() {
 	}
 	return (
 		<SectionWrapper
-			title="Get in touch"
+			title="Get In Touch"
 			id="contact"
 			ref={contactSectionRef}
 			sectionInView={contactSectionInView}

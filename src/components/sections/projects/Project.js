@@ -52,19 +52,13 @@ function Project({ project }) {
 					</ul>
 				</TechnologiesUsedContainer>
 				<ButtonsContainer>
-					<Button
-						text="Live Website"
-						isExternalLink={true}
-						url={project.websiteLink}
-						style={{ fontSize: '1.8rem' }}
-					/>
+					<div>
+						<Button text="Website" isExternalLink={true} url={project.websiteLink} />
+					</div>
 					{project.githubLink && (
-						<Button
-						text="GitHub Repo"
-						isExternalLink={true}
-						url={project.githubLink}
-						style={{ fontSize: '1.8rem' }}
-					/>
+						<div>
+							<Button text="GitHub" isExternalLink={true} url={project.githubLink} />
+						</div>
 					)}
 				</ButtonsContainer>
 			</TextContent>
@@ -141,7 +135,7 @@ const TechnologiesUsedContainer = styled.div`
 
 const ButtonsContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(max-content, 16rem));
+	grid-template-columns: repeat(auto-fit, minmax(max-content, 13rem));
 	justify-content: center;
 	column-gap: 1rem;
 	row-gap: 2rem;

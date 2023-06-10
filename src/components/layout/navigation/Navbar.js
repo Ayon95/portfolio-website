@@ -154,7 +154,7 @@ const NavLinks = styled.ul`
 	display: flex;
 
 	li:not(:last-child) {
-		margin-right: 3rem;
+		margin-right: 2.2rem;
 	}
 `;
 
@@ -186,7 +186,7 @@ const AnimatedNavLinks = styled(motion.ul)`
 const NavLink = styled.a`
 	${commonNavLinkStyles}
 
-	font-size: 2rem;
+	font-size: 1.6rem;
 	transition: color 0.3s, text-shadow 0.3s;
 
 	@media only screen and (hover: hover) and (pointer: fine) {

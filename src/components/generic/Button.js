@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 
 const variants = {
 	hoverAndFocus: {
-		scale: 1.1,
+		scale: 1.05,
 		boxShadow: stylesConfig.glowEffect,
 		transition: {
-			duration: 0.3,
+			duration: 0.2,
 			ease: 'easeInOut',
 		},
 	},
@@ -65,11 +65,12 @@ function Button({ text, type, isDisabled, isLink, isExternalLink, path, url, ...
 export default Button;
 
 const commonButtonStyles = css`
-	display: inline-block;
-	padding: 1.5rem 2.5rem;
+	display: flex;
+	justify-content: center;
+	padding: 1.3rem 3.5rem;
 	border-radius: 10rem;
 	background-color: ${stylesConfig.colorPrimary};
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-family: 'Nunito Sans';
 	color: #eee;
 	letter-spacing: 1.2px;

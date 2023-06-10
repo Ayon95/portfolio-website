@@ -10,7 +10,7 @@ function About() {
 	});
 	return (
 		<SectionContainer
-			title="About me"
+			title="About Me"
 			id="about"
 			ref={aboutSectionRef}
 			sectionInView={aboutSectionInView}

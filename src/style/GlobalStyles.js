@@ -50,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        font-size: 4.2rem;
+        font-size: 4.6rem;
     }
 
     h2 {
@@ -90,7 +90,7 @@ const GlobalStyles = createGlobalStyle`
 
     ${'' /* scrollbar styles that will work on Chrome, Edge, and Safari */}
         ::-webkit-scrollbar {
-            width: 1.5rem;
+            width: 1rem;
         }
 
         ::-webkit-scrollbar-track {
