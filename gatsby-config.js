@@ -23,10 +23,19 @@ module.exports = {
 		},
 
 		{
-			resolve: `gatsby-plugin-google-fonts`,
+			resolve: `gatsby-plugin-google-fonts-v2`,
 			options: {
-				fonts: [`Poppins\:700`, `Nunito Sans\:300, 400, 600, 700`],
 				display: 'swap',
+				fonts: [
+					{
+						family: 'Poppins',
+						weights: ['700'],
+					},
+					{
+						family: 'Nunito Sans',
+						weights: ['300', '400', '600', '700'],
+					},
+				],
 			},
 		},
 		{
