@@ -2,35 +2,24 @@ export const projects = [
 	{
 		title: 'Nikean Website',
 		description: 'Website and video platform for Nikean Foundation',
-		technologiesUsed: [
-			'HTML',
-			'CSS',
-			'Bootstrap',
-			'JavaScript',
-			'Ruby On Rails'
-		],
+		technologiesUsed: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Ruby On Rails'],
 		image: {
 			name: 'nikean-mockup',
 			alt: 'laptop and mobile mockup of Nikean website',
 		},
-		websiteLink: 'https://nikean.org/'
+		websiteLink: 'https://nikean.org/',
 	},
 
 	{
 		title: 'Violet Rails',
-		description: 'CMS and Web platform built with Ruby on Rails',
-		technologiesUsed: [
-			'HTML',
-			'CSS',
-			'Bootstrap',
-			'JavaScript',
-			'Ruby On Rails'
-		],
+		description: 'CMS and Web platform built with Ruby on Rails and Comfy CMS',
+		technologiesUsed: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Ruby On Rails'],
 		image: {
 			name: 'violet-rails-mockup',
 			alt: 'laptop and mobile mockup of Violet Rails website',
 		},
-		websiteLink: 'https://violet.restarone.solutions/'
+		websiteLink: 'https://violet.restarone.solutions/',
+		githubLink: 'https://github.com/restarone/violet_rails',
 	},
 
 	{
@@ -38,7 +27,7 @@ export const projects = [
 		description:
 			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
 
-		technologiesUsed: ['React', 'Sass'],
+		technologiesUsed: ['React', 'React Router', 'SCSS'],
 
 		image: {
 			name: 'covid-aware-mockup',
@@ -46,6 +35,18 @@ export const projects = [
 		},
 
 		websiteLink: 'https://covidawaregame.com/',
+	},
+
+	{
+		title: 'Wanless Supermarket',
+		description: 'Website for Wanless Supermarket, a Bangladeshi grocery store',
+		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+		image: {
+			name: 'wanless-supermarket-mockup',
+			alt: 'laptop and mobile mockup of Wanless Supermarket website',
+		},
+
+		websiteLink: 'https://wanlesssupermarket.ca/',
 	},
 
 	{
@@ -72,23 +73,11 @@ export const projects = [
 	},
 
 	{
-		title: 'Wanless Supermarket',
-		description: 'Website for Wanless Supermarket, a Bangladeshi grocery store in Brampton',
-		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
-		image: {
-			name: 'wanless-supermarket-mockup',
-			alt: 'laptop and mobile mockup of Wanless Supermarket website',
-		},
-
-		websiteLink: 'https://wanlesssupermarket.netlify.app/'
-	},
-
-	{
 		title: 'Birthday Reminder',
 		description:
 			'A React application that allows users to save birthdays of people that they want to remember. It tells a user if there is any birthday today, and also if there are any upcoming birthdays. Give it a try with these fake credentials (email: dummy123@email.com, password: dummy456) ',
 
-		technologiesUsed: ['React', 'Sass', 'Formik', 'Firebase'],
+		technologiesUsed: ['React', 'SCSS', 'Formik', 'Firebase'],
 
 		image: {
 			name: 'birthday-reminder-mockup',
