@@ -89,6 +89,21 @@ export const projects = [
 	},
 
 	{
+		title: 'Dashboard UI',
+		description: 'A responsive dashboard user interface with light and dark mode',
+
+		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+
+		image: {
+			name: 'responsive-dashboard-mockup',
+			alt: 'laptop and mobile mockup of responsive dashboard user interface',
+		},
+
+		websiteLink: 'https://responsive-dashboard-ui.netlify.app/',
+		githubLink: 'https://github.com/Ayon95/responsive-dashboard',
+	},
+
+	{
 		title: 'Battleship',
 		description:
 			'A one-player JavaScript implementation of the popular Battleship game. See if you can guess the locations of all three enemy ships.',
