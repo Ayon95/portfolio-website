@@ -88,6 +88,17 @@ const GlobalStyles = createGlobalStyle`
         color: ${stylesConfig.colorPrimaryLight};
     }
 
+    .sr-only {
+        position: absolute;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
     ${'' /* scrollbar styles that will work on Chrome, Edge, and Safari */}
         ::-webkit-scrollbar {
             width: 1rem;

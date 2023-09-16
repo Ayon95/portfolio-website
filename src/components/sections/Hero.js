@@ -16,6 +16,8 @@ const subtitleVariants = {
 	},
 };
 
+const title = "Hi I'm Mushfiq";
+
 const Hero = React.forwardRef((_, ref) => {
 	// making a query to get the resume
 	const data = useStaticQuery(graphql`
@@ -28,17 +30,20 @@ const Hero = React.forwardRef((_, ref) => {
 	return (
 		<Container ref={ref}>
 			<HeroContent>
-				<h1>
+				<h1 aria-labelledby="pageTitle">
+					<span className="sr-only" id="pageTitle">
+						{title}
+					</span>
 					<TypewriterComponent
 						options={{
-							strings: ["Hi, I'm Mushfiq", 'Welcome to my website'],
+							strings: [title, 'Welcome to my website'],
 							autoStart: true,
 							loop: true,
 						}}
 					/>
 				</h1>
 				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">
-					A web developer with a passion for creating amazing interactive experiences on the web.{' '}
+					A web developer with a passion for creating amazing interactive experiences on the web{' '}
 				</motion.p>
 				<ButtonsContainer>
 					<FadeInFromBelow>
