@@ -5,9 +5,8 @@ import stylesConfig from '../../style/stylesConfig';
 import { motion } from 'framer-motion';
 
 const variants = {
-	hoverAndFocus: {
+	hover: {
 		scale: 1.05,
-		boxShadow: stylesConfig.glowEffect,
 		transition: {
 			duration: 0.2,
 			ease: 'easeInOut',
@@ -15,17 +14,21 @@ const variants = {
 	},
 };
 
-function Button({ text, type, isDisabled, isLink, isExternalLink, path, url, ...rest }) {
+function Button({
+	text,
+	type,
+	color = 'primary',
+	isDisabled,
+	isLink,
+	isExternalLink,
+	path,
+	url,
+	...rest
+}) {
 	// if the button is an internal link
 	if (isLink) {
 		return (
-			<ButtonLinkComponent
-				to={path}
-				variants={variants}
-				whileHover="hoverAndFocus"
-				whileFocus="hoverAndFocus"
-				{...rest}
-			>
+			<ButtonLinkComponent to={path} variants={variants} whileHover="hover" color={color} {...rest}>
 				{text}
 			</ButtonLinkComponent>
 		);
@@ -39,8 +42,8 @@ function Button({ text, type, isDisabled, isLink, isExternalLink, path, url, ...
 				href={url}
 				target="_blank"
 				variants={variants}
-				whileHover="hoverAndFocus"
-				whileFocus="hoverAndFocus"
+				whileHover="hover"
+				color={color}
 				{...rest}
 			>
 				{text}
@@ -53,8 +56,8 @@ function Button({ text, type, isDisabled, isLink, isExternalLink, path, url, ...
 			type={type}
 			disabled={isDisabled || false}
 			variants={variants}
-			whileHover="hoverAndFocus"
-			whileFocus="hoverAndFocus"
+			whileHover="hover"
+			color={color}
 			{...rest}
 		>
 			{text}
@@ -69,7 +72,8 @@ const commonButtonStyles = css`
 	justify-content: center;
 	padding: 1.3rem 3.5rem;
 	border-radius: 10rem;
-	background-color: ${stylesConfig.colorPrimary};
+	background-color: ${props =>
+		props.color === 'secondary' ? stylesConfig.colorSecondary : stylesConfig.colorPrimary};
 	font-size: 1.6rem;
 	font-family: 'Nunito Sans';
 	color: #eee;
@@ -77,6 +81,11 @@ const commonButtonStyles = css`
 	font-weight: 700;
 	cursor: pointer;
 	outline: none;
+
+	&:focus-visible {
+		outline: 2px solid ${stylesConfig.colorPrimaryLight};
+		outline-offset: 5px;
+	}
 `;
 
 const ButtonComponent = styled(motion.button)`

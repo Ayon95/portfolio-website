@@ -8,6 +8,8 @@ const stylesConfig = {
 	colorPrimary: '#3e2c99', // rgb(62, 44, 153)
 	colorPrimaryLight: '#523acf',
 
+	colorSecondary: '#2a2352',
+
 	// success and error colors
 	colorSuccess: '#169c47',
 	colorError: '#e8554a',

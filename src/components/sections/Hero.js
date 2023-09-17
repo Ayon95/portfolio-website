@@ -51,7 +51,12 @@ const Hero = React.forwardRef((_, ref) => {
 					</FadeInFromBelow>
 
 					<FadeInFromBelow>
-						<Button text="Resume" isExternalLink={true} url={data.file.publicURL} />
+						<Button
+							text="Resume"
+							color="secondary"
+							isExternalLink={true}
+							url={data.file.publicURL}
+						/>
 					</FadeInFromBelow>
 				</ButtonsContainer>
 			</HeroContent>

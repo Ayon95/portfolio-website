@@ -112,8 +112,8 @@ export default Navbar;
 const commonNavLinkStyles = css`
 	outline: none;
 	&:focus-visible {
-		color: ${stylesConfig.colorPrimaryLight};
-		text-shadow: ${stylesConfig.glowEffect};
+		outline: 2px solid ${stylesConfig.colorPrimaryLight};
+		outline-offset: 5px;
 	}
 `;
 
