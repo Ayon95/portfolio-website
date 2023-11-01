@@ -78,6 +78,10 @@ const ProjectContainer = styled.div`
 		margin-bottom: 3rem;
 	}
 
+	@media only screen and (max-width: ${stylesConfig.bpLarge}) {
+		text-align: center;
+	}
+
 	@media only screen and (min-width: ${stylesConfig.bpLarge}) {
 		display: flex;
 
@@ -95,21 +99,23 @@ const Image = styled(GatsbyImage)`
 `;
 const TextContent = styled.div`
 	h3 {
-		text-align: center;
-		margin-bottom: ${stylesConfig.projectLayoutSpacing};
+		margin-bottom: 1.2rem;
 	}
 
 	p {
 		max-width: 60ch;
-		margin: 0 auto;
+
+		@media only screen and (max-width: ${stylesConfig.bpLarge}) {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 `;
 
 const TechnologiesUsedContainer = styled.div`
 	margin: ${stylesConfig.projectLayoutSpacing} 0;
 	h4 {
-		text-align: center;
-		margin-bottom: ${stylesConfig.projectLayoutSpacing};
+		margin-bottom: 2rem;
 	}
 
 	ul {
@@ -117,7 +123,10 @@ const TechnologiesUsedContainer = styled.div`
 		display: grid;
 		grid-template-columns: repeat(auto-fit, 15rem);
 		gap: 1rem;
-		justify-content: center;
+
+		@media only screen and (max-width: ${stylesConfig.bpLarge}) {
+			justify-content: center;
+		}
 	}
 
 	li {
@@ -125,7 +134,6 @@ const TechnologiesUsedContainer = styled.div`
 		background-color: ${stylesConfig.bodyBackgroundColor};
 		padding: 1rem;
 		border-radius: 4px;
-		font-size: 1.8rem;
 		text-align: center;
 		justify-content: center;
 		display: flex;
@@ -136,7 +144,10 @@ const TechnologiesUsedContainer = styled.div`
 const ButtonsContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(max-content, 13rem));
-	justify-content: center;
 	column-gap: 1rem;
 	row-gap: 2rem;
+
+	@media only screen and (max-width: ${stylesConfig.bpLarge}) {
+		justify-content: center;
+	}
 `;

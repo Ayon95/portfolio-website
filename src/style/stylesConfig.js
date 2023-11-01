@@ -35,8 +35,8 @@ const stylesConfig = {
 	// breakpoints
 	bpExtraSmall: '21.88em', // 350px
 	bpSmall: '37.5em', // 600px
-	bpMedium: '56.25em', // 960px
-	bpLarge: '75em', // 1200px
+	bpMedium: '56.25em', // 900px
+	bpLarge: '68.75em', // 1100px
 	bpExtraLarge: '112.5em', // 1800px
 };
 
