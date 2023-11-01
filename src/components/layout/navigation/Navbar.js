@@ -118,7 +118,7 @@ const commonNavLinkStyles = css`
 `;
 
 const NavContainer = styled.header`
-	padding: ${stylesConfig.layoutHorizontalPadding};
+	padding: 2rem 3rem;
 	position: ${props => (props.heroSectionInView ? 'absolute' : 'fixed')};
 	background-color: ${props =>
 		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};

@@ -32,7 +32,7 @@ module.exports = {
 						weights: ['700'],
 					},
 					{
-						family: 'Nunito Sans',
+						family: 'Work Sans',
 						weights: ['300', '400', '600', '700'],
 					},
 				],

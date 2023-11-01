@@ -38,8 +38,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-size: 2rem;
-        font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.6rem;
+        font-family: 'Work Sans';
         background-color: ${stylesConfig.bodyBackgroundColor};
     }
 
@@ -50,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        font-size: 4.6rem;
+        font-size: clamp(4.6rem, 6vw, 6.4rem);
     }
 
     h2 {
@@ -62,11 +62,10 @@ const GlobalStyles = createGlobalStyle`
     }
 
     h4 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     p {
-        font-size: 1.8rem;
         line-height: 1.55;
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
         color: ${stylesConfig.bodyFontColor};

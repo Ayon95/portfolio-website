@@ -70,15 +70,15 @@ export default Button;
 const commonButtonStyles = css`
 	display: flex;
 	justify-content: center;
-	padding: 1.3rem 3.5rem;
+	padding: 1.6rem 3.5rem;
 	border-radius: 10rem;
 	background-color: ${props =>
 		props.color === 'secondary' ? stylesConfig.colorSecondary : stylesConfig.colorPrimary};
+	font-family: 'Work Sans';
 	font-size: 1.6rem;
-	font-family: 'Nunito Sans';
 	color: #eee;
 	letter-spacing: 1.2px;
-	font-weight: 700;
+	font-weight: 600;
 	cursor: pointer;
 	outline: none;
 

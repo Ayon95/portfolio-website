@@ -1,10 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import TypewriterComponent from 'typewriter-effect';
 import Button from '../generic/Button';
 import FadeInFromBelow from '../animation/FadeInFromBelow';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
+
+const titleVariants = {
+	hidden: {
+		y: -60,
+		opacity: 0,
+	},
+
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: { duration: 1, ease: 'easeOut' },
+	},
+};
 
 const subtitleVariants = {
 	hidden: { x: -60, opacity: 0 },
@@ -12,11 +24,9 @@ const subtitleVariants = {
 	visible: {
 		x: 0,
 		opacity: 1,
-		transition: { delay: 2.7, duration: 1, ease: 'easeOut' },
+		transition: { duration: 1, ease: 'easeOut' },
 	},
 };
-
-const title = "Hi I'm Mushfiq";
 
 const Hero = React.forwardRef((_, ref) => {
 	// making a query to get the resume
@@ -30,9 +40,14 @@ const Hero = React.forwardRef((_, ref) => {
 	return (
 		<Container ref={ref}>
 			<HeroContent>
-				<h1 aria-labelledby="pageTitle">
-					<span className="sr-only" id="pageTitle">
-						{title}
+				<motion.h1
+					aria-labelledby="pageTitle"
+					variants={titleVariants}
+					initial="hidden"
+					animate="visible"
+				>
+					{/* <span className="sr-only" id="pageTitle">
+						{title}. Welcome to my website.
 					</span>
 					<TypewriterComponent
 						options={{
@@ -40,10 +55,12 @@ const Hero = React.forwardRef((_, ref) => {
 							autoStart: true,
 							loop: true,
 						}}
-					/>
-				</h1>
+					/> */}
+					Hi, I am Mushfiq
+				</motion.h1>
 				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">
-					A web developer with a passion for creating amazing interactive experiences on the web{' '}
+					As a web developer, I am passionate about creating beautiful, interactive, and accessible
+					experiences on the web
 				</motion.p>
 				<ButtonsContainer>
 					<FadeInFromBelow>
@@ -70,12 +87,15 @@ const Container = styled.section`
 	min-height: 100vh;
 	min-height: 100svh;
 	display: flex;
+	justify-content: center;
 	align-items: center;
+	text-align: center;
 `;
 
 const ButtonsContainer = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(max-content, 13rem));
+	justify-content: center;
 	column-gap: 1rem;
 	row-gap: 2rem;
 `;
@@ -88,8 +108,8 @@ const HeroContent = styled.div`
 	}
 
 	p {
-		font-size: 2rem;
-		max-width: 35ch;
+		font-size: 1.8rem;
+		max-width: 50ch;
 		margin-bottom: 4rem;
 	}
 `;
