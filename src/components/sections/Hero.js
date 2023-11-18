@@ -46,16 +46,6 @@ const Hero = React.forwardRef((_, ref) => {
 					initial="hidden"
 					animate="visible"
 				>
-					{/* <span className="sr-only" id="pageTitle">
-						{title}. Welcome to my website.
-					</span>
-					<TypewriterComponent
-						options={{
-							strings: [title, 'Welcome to my website'],
-							autoStart: true,
-							loop: true,
-						}}
-					/> */}
 					Hi, I am Mushfiq
 				</motion.h1>
 				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">

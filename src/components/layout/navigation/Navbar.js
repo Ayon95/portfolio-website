@@ -9,7 +9,6 @@ import {
 	navLinkVariants,
 } from '../../../services/animationService/hamburgerMenu';
 import logo from '../../../assets/images/logo-portfolio.png';
-import { useIsMediumScreen } from './../../../hooks/useMediaQuery';
 import FocusLock from 'react-focus-lock';
 
 const navbarLinks = [
@@ -21,8 +20,6 @@ const navbarLinks = [
 
 function Navbar({ heroSectionInView }) {
 	const [shouldShowMenu, setShouldShowMenu] = useState(false);
-	// isMediumScreen will be true when the viewport width is at least the width specified for medium-sized screens
-	const isMediumScreen = useIsMediumScreen();
 
 	// Need a ref to the hamburger button so that it can be programmatically focused when a user closes the hamburger menu by pressing Escape
 	const hamburgerButtonRef = useRef();
@@ -68,39 +65,35 @@ function Navbar({ heroSectionInView }) {
 						handlePressEscape={handlePressEscape}
 						ref={hamburgerButtonRef}
 					/>
-					{isMediumScreen && (
-						<NavLinks>
-							{navbarLinks.map(link => (
-								<li key={link.title}>
-									<NavLink href={link.path}>{link.title}</NavLink>
-								</li>
-							))}
-						</NavLinks>
-					)}
-					{/* render the animated versions (animated hamburger menu) when the viewport width is smaller than that specified for medium-sized screens */}
-					{!isMediumScreen && (
-						<AnimatedNavLinks
-							id="navigation menu"
-							variants={navLinksContainerVariants}
-							initial="hidden"
-							animate={shouldShowMenu ? 'visible' : 'hidden'}
-							aria-hidden={!shouldShowMenu}
-						>
-							{navbarLinks.map(link => (
-								<li key={link.title}>
-									<AnimatedNavLink
-										href={link.path}
-										onClick={toggleMenu}
-										onKeyDown={handlePressEscape}
-										tabIndex={shouldShowMenu ? 0 : -1}
-										variants={navLinkVariants}
-									>
-										{link.title}
-									</AnimatedNavLink>
-								</li>
-							))}
-						</AnimatedNavLinks>
-					)}
+					<NavLinks>
+						{navbarLinks.map(link => (
+							<li key={link.title}>
+								<NavLink href={link.path}>{link.title}</NavLink>
+							</li>
+						))}
+					</NavLinks>
+					<AnimatedNavLinks
+						id="navigation menu"
+						variants={navLinksContainerVariants}
+						initial="hidden"
+						animate={shouldShowMenu ? 'visible' : 'hidden'}
+						aria-hidden={!shouldShowMenu}
+					>
+						{navbarLinks.map(link => (
+							<li key={link.title}>
+								<AnimatedNavLink
+									href={link.path}
+									onClick={toggleMenu}
+									onKeyDown={handlePressEscape}
+									tabIndex={shouldShowMenu ? 0 : -1}
+									variants={navLinkVariants}
+								>
+									{link.title}
+								</AnimatedNavLink>
+							</li>
+						))}
+					</AnimatedNavLinks>
+					{}
 				</Nav>
 			</FocusLock>
 		</NavContainer>
@@ -151,13 +144,17 @@ const LogoWrapper = styled(Link)`
 
 const NavLinks = styled.ul`
 	list-style: none;
-	display: flex;
+	display: none;
 
 	li:not(:last-child) {
 		margin-right: 2.2rem;
 	}
-`;
 
+	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
+		display: flex;
+	}
+`;
+/* render the animated versions (animated hamburger menu) when the viewport width is smaller than that specified for medium-sized screens */
 const AnimatedNavLinks = styled(motion.ul)`
 	list-style: none;
 	display: flex;
@@ -179,7 +176,7 @@ const AnimatedNavLinks = styled(motion.ul)`
 	}
 
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
-		all: unset;
+		display: none;
 	}
 `;
 

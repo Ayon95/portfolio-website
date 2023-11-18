@@ -18,6 +18,7 @@ export default function Home() {
 		threshold: 0,
 		root: null,
 		rootMargin: '-150px',
+		initialInView: true,
 	});
 	return (
 		<div id="app">
