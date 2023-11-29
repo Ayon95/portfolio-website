@@ -1,12 +1,14 @@
 export const projects = [
 	{
 		title: 'Restarone Hospitality',
-		description: 'Website for Restarone Hospitality',
+		description:
+			"Website for Restarone's web and digital solutions for restaurants and hospitality services",
 		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
 		image: {
 			name: 'hospitality-restarone-mockup',
 			alt: 'laptop and mobile mockup of Restarone Hospitality',
 		},
+		websiteLink: 'https://hospitality.restarone.com/',
 	},
 	{
 		title: 'COVID Aware',
