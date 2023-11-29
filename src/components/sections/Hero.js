@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../generic/Button';
-import FadeInFromBelow from '../animation/FadeInFromBelow';
 import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
+
+const transitionOptions = { duration: 0.6, ease: 'easeOut', opacity: { duration: 0.4 } };
 
 const titleVariants = {
 	hidden: {
@@ -14,7 +15,7 @@ const titleVariants = {
 	visible: {
 		y: 0,
 		opacity: 1,
-		transition: { duration: 1, ease: 'easeOut' },
+		transition: transitionOptions,
 	},
 };
 
@@ -24,7 +25,20 @@ const subtitleVariants = {
 	visible: {
 		x: 0,
 		opacity: 1,
-		transition: { duration: 1, ease: 'easeOut' },
+		transition: transitionOptions,
+	},
+};
+
+const buttonContainerVariants = {
+	hidden: {
+		y: 60,
+		opacity: 0,
+	},
+
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: transitionOptions,
 	},
 };
 
@@ -52,19 +66,9 @@ const Hero = React.forwardRef((_, ref) => {
 					As a web developer, I am passionate about creating beautiful, interactive, and accessible
 					experiences on the web
 				</motion.p>
-				<ButtonsContainer>
-					<FadeInFromBelow>
-						<Button text="Projects" isLink={true} path="/#projects" />
-					</FadeInFromBelow>
-
-					<FadeInFromBelow>
-						<Button
-							text="Resume"
-							color="secondary"
-							isExternalLink={true}
-							url={data.file.publicURL}
-						/>
-					</FadeInFromBelow>
+				<ButtonsContainer variants={buttonContainerVariants} initial="hidden" animate="visible">
+					<Button text="Projects" isLink={true} path="/#projects" />
+					<Button text="Resume" color="secondary" isExternalLink={true} url={data.file.publicURL} />
 				</ButtonsContainer>
 			</HeroContent>
 		</Container>
@@ -82,7 +86,7 @@ const Container = styled.section`
 	text-align: center;
 `;
 
-const ButtonsContainer = styled.div`
+const ButtonsContainer = styled(motion.div)`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(max-content, 13rem));
 	justify-content: center;
