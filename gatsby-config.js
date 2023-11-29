@@ -23,22 +23,6 @@ module.exports = {
 		},
 
 		{
-			resolve: `gatsby-plugin-google-fonts-v2`,
-			options: {
-				display: 'swap',
-				fonts: [
-					{
-						family: 'Poppins',
-						weights: ['700'],
-					},
-					{
-						family: 'Work Sans',
-						weights: ['300', '400', '600', '700'],
-					},
-				],
-			},
-		},
-		{
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {

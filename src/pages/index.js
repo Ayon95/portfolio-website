@@ -23,7 +23,7 @@ export default function Home() {
 	return (
 		<div id="app">
 			<GlobalStyles />
-			<Helmet>
+			<Helmet htmlAttributes={{ lang: 'en-US' }}>
 				<meta
 					name="description"
 					content="Portfolio website of Mushfiq Rahman, a front-end developer"

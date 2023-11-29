@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-size: 1.6rem;
-        font-family: 'Work Sans';
+        font-family: 'Work Sans', sans-serif;
         background-color: ${stylesConfig.bodyBackgroundColor};
     }
 
