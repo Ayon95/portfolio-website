@@ -1,5 +1,14 @@
 export const projects = [
 	{
+		title: 'Restarone Hospitality',
+		description: 'Website for Restarone Hospitality',
+		technologiesUsed: ['HTML', 'CSS', 'JavaScript'],
+		image: {
+			name: 'hospitality-restarone-mockup',
+			alt: 'laptop and mobile mockup of Restarone Hospitality',
+		},
+	},
+	{
 		title: 'COVID Aware',
 		description:
 			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
