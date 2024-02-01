@@ -11,6 +11,16 @@ export const projects = [
 		websiteLink: 'https://hospitality.restarone.com/',
 	},
 	{
+		title: 'Coffee Oysters Champagne',
+		description: 'Website for Coffee Oysters Champagne, a restaurant and cocktail bar in Toronto',
+		technologiesUsed: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Ruby on Rails'],
+		image: {
+			name: 'coc-mockup',
+			alt: 'laptop and mobile mockup of Coffee Oysters Champagne',
+		},
+		websiteLink: 'https://sipshucksip.com/',
+	},
+	{
 		title: 'COVID Aware',
 		description:
 			'A COVID-19 awareness-building quiz game. Test your knowledge of the COVID-19 safety measures and restrictions in Ontario, Canada.',
