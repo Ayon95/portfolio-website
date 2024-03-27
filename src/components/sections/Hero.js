@@ -63,8 +63,8 @@ const Hero = React.forwardRef((_, ref) => {
 					Hi, I am Mushfiq
 				</motion.h1>
 				<motion.p variants={subtitleVariants} initial="hidden" animate="visible">
-					As a web developer, I am passionate about creating beautiful, interactive, and accessible
-					experiences on the web
+					I am a web developer who is passionate about creating beautiful, interactive, and
+					accessible experiences on the web
 				</motion.p>
 				<ButtonsContainer variants={buttonContainerVariants} initial="hidden" animate="visible">
 					<Button text="Projects" isLink={true} path="/#projects" />
