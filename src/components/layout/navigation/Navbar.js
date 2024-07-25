@@ -102,22 +102,21 @@ function Navbar({ heroSectionInView }) {
 
 export default Navbar;
 
-const commonNavLinkStyles = css`
-	outline: none;
-	&:focus-visible {
-		outline: 2px solid ${stylesConfig.colorPrimaryLight};
-		outline-offset: 5px;
-	}
-`;
-
 const NavContainer = styled.header`
 	padding: 2rem 3rem;
 	position: ${props => (props.heroSectionInView ? 'absolute' : 'fixed')};
 	background-color: ${props =>
-		props.heroSectionInView ? 'transparent' : stylesConfig.navBackgroundColor};
+		props.heroSectionInView ? 'transparent' : `hsl(${stylesConfig.colorCardBackground} / 0.6)`};
 	width: 100%;
 	z-index: 10;
 	transition: background-color 0.6s;
+	backdrop-filter: blur(15px);
+
+	${props =>
+		!props.heroSectionInView &&
+		css`
+			border-bottom: 1px solid hsl(${stylesConfig.colorPrimary} / 0.4);
+		`}
 `;
 
 const Nav = styled.nav`
@@ -130,13 +129,6 @@ const Nav = styled.nav`
 `;
 
 const LogoWrapper = styled(Link)`
-	outline: none;
-
-	&:focus-visible {
-		outline: solid ${stylesConfig.colorPrimaryLight};
-		outline-offset: 1rem;
-	}
-
 	img {
 		width: 7rem;
 	}
@@ -147,7 +139,7 @@ const NavLinks = styled.ul`
 	display: none;
 
 	li:not(:last-child) {
-		margin-right: 2.2rem;
+		margin-right: 3rem;
 	}
 
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
@@ -168,7 +160,12 @@ const AnimatedNavLinks = styled(motion.ul)`
 	top: 0;
 	left: 0;
 
-	background-color: ${stylesConfig.navBackgroundColor};
+	background-color: hsl(${stylesConfig.bodyBackgroundColor});
+	background-image: radial-gradient(
+		ellipse 100% 100% at top,
+		hsl(${stylesConfig.colorPrimary} / 0.3),
+		hsl(${stylesConfig.bodyBackgroundColor})
+	);
 	z-index: 10;
 
 	li:not(:last-child) {
@@ -181,20 +178,16 @@ const AnimatedNavLinks = styled(motion.ul)`
 `;
 
 const NavLink = styled.a`
-	${commonNavLinkStyles}
-
 	font-size: 1.6rem;
 	transition: color 0.3s, text-shadow 0.3s;
 
 	@media only screen and (hover: hover) and (pointer: fine) {
 		&:hover {
-			color: ${stylesConfig.colorPrimaryLight};
+			color: hsl(${stylesConfig.colorPrimaryLight});
 		}
 	}
 `;
 
 const AnimatedNavLink = styled(motion.a)`
-	${commonNavLinkStyles}
-
-	font-size: 2.6rem;
+	font-size: 2rem;
 `;

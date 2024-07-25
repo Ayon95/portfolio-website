@@ -2,22 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import stylesConfig from '../../style/stylesConfig';
-import { motion } from 'framer-motion';
-
-const variants = {
-	hover: {
-		scale: 1.05,
-		transition: {
-			duration: 0.2,
-			ease: 'easeInOut',
-		},
-	},
-};
 
 function Button({
 	text,
-	type,
-	color = 'primary',
+	variant = 'primary',
 	isDisabled,
 	isLink,
 	isExternalLink,
@@ -28,7 +16,7 @@ function Button({
 	// if the button is an internal link
 	if (isLink) {
 		return (
-			<ButtonLinkComponent to={path} variants={variants} whileHover="hover" color={color} {...rest}>
+			<ButtonLinkComponent to={path} variant={variant} {...rest}>
 				{text}
 			</ButtonLinkComponent>
 		);
@@ -37,29 +25,14 @@ function Button({
 	// if the button links to an external web page
 	if (isExternalLink) {
 		return (
-			<ButtonLinkComponent
-				as={motion.a}
-				href={url}
-				target="_blank"
-				variants={variants}
-				whileHover="hover"
-				color={color}
-				{...rest}
-			>
+			<ButtonLinkComponent href={url} target="_blank" variant={variant} {...rest}>
 				{text}
 			</ButtonLinkComponent>
 		);
 	}
 
 	return (
-		<ButtonComponent
-			type={type}
-			disabled={isDisabled || false}
-			variants={variants}
-			whileHover="hover"
-			color={color}
-			{...rest}
-		>
+		<ButtonComponent variant={variant} disabled={isDisabled || false} {...rest}>
 			{text}
 		</ButtonComponent>
 	);
@@ -71,33 +44,47 @@ const commonButtonStyles = css`
 	display: flex;
 	justify-content: center;
 	padding: 1.6rem 3.5rem;
+
+	${props =>
+		props.variant === 'primary' &&
+		css`
+			border: 1px solid hsl(${stylesConfig.colorPrimaryLight} / 0.5);
+		`}
+
 	border-radius: 10rem;
 	background-color: ${props =>
-		props.color === 'secondary' ? stylesConfig.colorSecondary : stylesConfig.colorPrimary};
+		props.variant === 'secondary'
+			? `hsl(${stylesConfig.colorCardBackground})`
+			: `hsl(${stylesConfig.colorPrimary} / 0.2)`};
 	font-family: 'Work Sans';
 	font-size: 1.6rem;
 	color: #eee;
 	letter-spacing: 1.2px;
 	font-weight: 600;
 	cursor: pointer;
-	outline: none;
+	transition: background-color 0.3s;
 
-	&:focus-visible {
-		outline: 2px solid ${stylesConfig.colorPrimaryLight};
-		outline-offset: 5px;
+	&:hover {
+		${props =>
+			props.variant === 'secondary'
+				? css`
+						background-color: hsl(${stylesConfig.colorCardBackground} / 0.5);
+				  `
+				: css`
+						background-color: hsl(${stylesConfig.colorPrimary});
+				  `}
 	}
 `;
 
-const ButtonComponent = styled(motion.button)`
+const ButtonComponent = styled.button`
 	${commonButtonStyles}
-	border: none;
 
 	&:disabled {
 		cursor: not-allowed;
 		opacity: 0.5;
 	}
 `;
-const ButtonLinkComponent = styled(motion(Link))`
+const ButtonLinkComponent = styled(Link)`
 	${commonButtonStyles}
 	&:link,
 	&:visited,

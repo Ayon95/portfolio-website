@@ -61,7 +61,7 @@ export default SectionWrapper;
 
 const Container = styled.section`
 	padding: ${stylesConfig.sectionVerticalPadding} 0;
-	border-top: 2px solid ${stylesConfig.colorPrimary};
+	border-top: 1px solid hsl(${stylesConfig.colorPrimaryLight} / 0.4);
 
 	h2 {
 		text-align: center;

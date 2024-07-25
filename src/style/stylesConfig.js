@@ -1,21 +1,21 @@
 const stylesConfig = {
 	// typography
-	bodyFontColor: '#c0bfc7',
-	headingFontColor: '#eee',
+	bodyFontColor: '#d3d3de',
+	headingFontColor: '#e2e2e9',
 	bodyTextLetterSpacing: '0.3px',
 
 	// primary color
-	colorPrimary: '#3e2c99', // rgb(62, 44, 153)
-	colorPrimaryLight: '#523acf',
+	colorPrimary: '250 55% 39%', // rgb(62, 44, 153)
+	colorPrimaryLight: '245 85% 67%',
 
-	colorSecondary: '#2a2352',
+	colorCardBackground: '249 39% 14%',
 
 	// success and error colors
 	colorSuccess: '#169c47',
 	colorError: '#e8554a',
 
 	// body background color
-	bodyBackgroundColor: '#171726',
+	bodyBackgroundColor: '236 50% 5%',
 
 	// nav background color
 	navBackgroundColor: '#131320',
@@ -30,7 +30,7 @@ const stylesConfig = {
 	projectLayoutSpacing: '4rem',
 
 	// background gradient for the app
-	backgroundGradient: 'linear-gradient(to bottom, rgb(27, 26, 43), rgb(22, 21, 36))',
+	backgroundGradient: `radial-gradient(ellipse 80% 32% at 50% -20%, hsl(250 55% 39% / 0.8), rgba(120,119,198,0))`,
 
 	// breakpoints
 	bpExtraSmall: '21.88em', // 350px

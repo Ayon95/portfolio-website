@@ -14,11 +14,16 @@ export default Footer;
 
 const FooterComponent = styled.footer`
 	padding: 3rem ${stylesConfig.layoutHorizontalPadding};
+	background-image: linear-gradient(
+		to right,
+		hsl(${stylesConfig.colorPrimary} / 0.15),
+		hsl(${stylesConfig.bodyBackgroundColor})
+	);
 
 	p {
 		color: ${stylesConfig.bodyFontColor};
 		opacity: 0.85;
 		text-align: center;
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 	}
 `;

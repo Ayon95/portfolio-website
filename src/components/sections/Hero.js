@@ -68,7 +68,12 @@ const Hero = React.forwardRef((_, ref) => {
 				</motion.p>
 				<ButtonsContainer variants={buttonContainerVariants} initial="hidden" animate="visible">
 					<Button text="Projects" isLink={true} path="/#projects" />
-					<Button text="Resume" color="secondary" isExternalLink={true} url={data.file.publicURL} />
+					<Button
+						text="Resume"
+						variant="secondary"
+						isExternalLink={true}
+						url={data.file.publicURL}
+					/>
 				</ButtonsContainer>
 			</HeroContent>
 		</Container>

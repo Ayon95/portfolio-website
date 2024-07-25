@@ -61,23 +61,17 @@ export default HamburgerButton;
 
 const barCommonStyles = css`
 	display: inline-block;
-	background-color: ${stylesConfig.colorPrimary};
+	background-color: hsl(${stylesConfig.colorPrimary});
 	${'' /* using px because I want the size of the hamburger button to be fixed */}
 	height: 5px;
 `;
 
 const HamburgerButtonComponent = styled(motion.button)`
 	background: none;
-	outline: none;
 	border: none;
 	display: flex;
 	flex-direction: column;
 	z-index: 20;
-
-	&:focus-visible {
-		outline: solid ${stylesConfig.colorPrimaryLight};
-		outline-offset: 1rem;
-	}
 
 	@media only screen and (min-width: ${stylesConfig.bpMedium}) {
 		display: none;

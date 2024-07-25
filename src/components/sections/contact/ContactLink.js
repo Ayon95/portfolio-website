@@ -20,8 +20,7 @@ const ContactLinkComponent = styled.a`
 	}
 
 	&:focus-visible svg {
-		fill: ${stylesConfig.colorPrimaryLight};
-		filter: drop-shadow(${stylesConfig.glowEffect});
+		fill: hsl(${stylesConfig.colorPrimaryLight});
 	}
 
 	svg {
@@ -33,7 +32,7 @@ const ContactLinkComponent = styled.a`
 	/* apply hover styles to the svg icon only for devices that support mouse hover state */
 	@media only screen and (hover: hover) and (pointer: fine) {
 		svg:hover {
-			fill: ${stylesConfig.colorPrimaryLight};
+			fill: hsl(${stylesConfig.colorPrimaryLight});
 		}
 	}
 `;

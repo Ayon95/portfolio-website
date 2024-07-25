@@ -16,10 +16,6 @@ const GlobalStyles = createGlobalStyle`
         scroll-behavior: smooth;
         scroll-padding-top: 16rem;
 
-        ${'' /* scroll bar styles that will work on Firefox */}
-        scrollbar-width: auto;
-        scrollbar-color: ${stylesConfig.colorPrimary} #2b293b;
-
         @media only screen and (max-width: ${stylesConfig.bpExtraSmall}) {
             font-size: 50%;
 	    }
@@ -35,12 +31,18 @@ const GlobalStyles = createGlobalStyle`
         @media only screen and (min-width: ${stylesConfig.bpExtraLarge}) {
             font-size: 90%;
 	    }
+
+        @supports (scrollbar-width: auto) {
+            scrollbar-width: thin;
+            scrollbar-color: hsl(${stylesConfig.colorPrimary}) #2b293b;
+        }
     }
 
     body {
         font-size: 1.6rem;
         font-family: 'Work Sans', sans-serif;
-        background-color: ${stylesConfig.bodyBackgroundColor};
+        background-color: hsl(${stylesConfig.bodyBackgroundColor});
+        background-image: ${stylesConfig.backgroundGradient};
     }
 
     h1, h2, h3, h4 {
@@ -71,7 +73,7 @@ const GlobalStyles = createGlobalStyle`
         color: ${stylesConfig.bodyFontColor};
 
         &::selection {
-            background-color: ${stylesConfig.colorPrimary};
+            background-color: hsl(${stylesConfig.colorPrimary});
             color: #eee;
         }
     }
@@ -83,8 +85,18 @@ const GlobalStyles = createGlobalStyle`
         letter-spacing: ${stylesConfig.bodyTextLetterSpacing};
     }
 
+    ${'' /* Focus styles */}
+    :focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    :focus-visible {
+        outline: 2px solid hsl(${stylesConfig.colorPrimaryLight} / 0.6);
+        outline-offset: 5px;
+    }
+
     .active-link {
-        color: ${stylesConfig.colorPrimaryLight};
+        color: hsl(${stylesConfig.colorPrimaryLight});
     }
 
     .sr-only {
@@ -98,24 +110,20 @@ const GlobalStyles = createGlobalStyle`
         white-space: nowrap;
     }
 
-    ${'' /* scrollbar styles that will work on Chrome, Edge, and Safari */}
+    ${'' /* scrollbar styles that will work on Safari and legacy versions of Chrome, Edge */}
+    @supports selector(::-webkit-scrollbar) {
         ::-webkit-scrollbar {
             width: 1rem;
         }
 
         ::-webkit-scrollbar-track {
-        background-image: linear-gradient(to bottom, #2b293b, ${stylesConfig.bodyBackgroundColor});
+        background-color: #2b293b;
         }
 
         ::-webkit-scrollbar-thumb {
-            background-image: linear-gradient(
-                to bottom,
-                ${stylesConfig.colorPrimaryLight},
-                ${stylesConfig.colorPrimary}
-            );
-            box-shadow: ${stylesConfig.glowEffect};
-            border-radius: 10rem;
+            background-color: hsl(${stylesConfig.colorPrimary})
         }
+    }
 `;
 
 export default GlobalStyles;

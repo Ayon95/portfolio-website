@@ -69,10 +69,14 @@ function Project({ project }) {
 export default Project;
 
 const ProjectContainer = styled.div`
-	background-color: #2b293b;
+	background-image: radial-gradient(
+		ellipse 75% 80% at 50% 0%,
+		hsl(${stylesConfig.colorPrimaryLight} / 0.25),
+		hsl(${stylesConfig.colorCardBackground} / 0.3)
+	);
+	border: 1px solid hsl(${stylesConfig.colorPrimaryLight} / 0.2);
 	padding: ${stylesConfig.projectLayoutSpacing};
-	border-radius: 1rem;
-	box-shadow: rgba(0, 0, 0, 0.35) 0 0.5rem 1.5rem;
+	border-radius: 1.6rem;
 
 	&:not(:last-child) {
 		margin-bottom: 3rem;
@@ -120,9 +124,10 @@ const TechnologiesUsedContainer = styled.div`
 
 	ul {
 		list-style: none;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, 15rem);
+		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
+		font-size: 1.4rem;
 
 		@media only screen and (max-width: ${stylesConfig.bpLarge}) {
 			justify-content: center;
@@ -131,13 +136,9 @@ const TechnologiesUsedContainer = styled.div`
 
 	li {
 		color: ${stylesConfig.bodyFontColor};
-		background-color: ${stylesConfig.bodyBackgroundColor};
-		padding: 1rem;
-		border-radius: 4px;
-		text-align: center;
-		justify-content: center;
-		display: flex;
-		align-items: center;
+		background-color: hsl(${stylesConfig.colorPrimary} / 0.3);
+		padding: 1rem 1.6rem;
+		border-radius: 5px;
 	}
 `;
 

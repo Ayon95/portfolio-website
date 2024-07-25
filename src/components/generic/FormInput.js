@@ -42,18 +42,8 @@ const inputStyles = css`
 	padding: 1.5rem;
 	margin-bottom: 1rem;
 	font-size: 1.8rem;
-	background-color: #2b293b;
+	background-color: hsl(${stylesConfig.colorCardBackground} / 0.6);
 	color: ${stylesConfig.bodyFontColor};
-	outline: none;
-	transition: box-shadow 0.3s;
-
-	&:focus {
-		${'' /* box shadow support for Safari */}
-		-webkit-appearance: none;
-		-webkit-box-shadow: 0 0 2px 2px inset rgb(62, 44, 153);
-		appearance: none;
-		box-shadow: 0 0 2px 2px inset rgb(62, 44, 153);
-	}
 `;
 
 const InputContainer = styled.div`
@@ -82,6 +72,5 @@ const TextAreaInput = styled.textarea`
 `;
 
 const ErrorMessageComponent = styled(ErrorMessage)`
-	font-size: 1.8rem;
 	color: ${stylesConfig.colorError};
 `;
