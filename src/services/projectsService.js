@@ -79,7 +79,7 @@ export const projects = [
 			alt: 'laptop and mobile mockup of Wanless Supermarket website',
 		},
 
-		websiteLink: 'https://wanlesssupermarket.ca/',
+		websiteLink: 'https://wanlesssupermarket.com/',
 	},
 
 	{
